@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shunya Marketing Services | From Zero to Scale</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#e8e8e4",
+              "inverse-surface": "#0d0f0d",
+              "error-dim": "#a70138",
+              "on-surface-variant": "#5b5c59",
+              "primary-container": "#ac8eff",
+              "on-tertiary": "#ffedff",
+              "tertiary-fixed-dim": "#d97dff",
+              "secondary-dim": "#00576a",
+              "surface-dim": "#d4d5d0",
+              "on-surface": "#2e2f2d",
+              "tertiary-container": "#e092ff",
+              "tertiary-dim": "#8200b1",
+              "on-tertiary-fixed-variant": "#600084",
+              "surface-tint": "#6a1cf6",
+              "primary-fixed": "#ac8eff",
+              "tertiary": "#9400ca",
+              "primary-fixed-dim": "#a07dff",
+              "on-primary": "#f7f0ff",
+              "secondary-fixed": "#79dfff",
+              "on-tertiary-fixed": "#2c003f",
+              "surface-variant": "#ddddd8",
+              "on-secondary-fixed": "#003a47",
+              "surface": "#f7f6f2",
+              "outline": "#767774",
+              "surface-container-high": "#e3e3de",
+              "surface-bright": "#f7f6f2",
+              "error": "#b41340",
+              "outline-variant": "#adadaa",
+              "secondary-container": "#79dfff",
+              "on-secondary-fixed-variant": "#00586c",
+              "surface-container-low": "#f1f1ed",
+              "inverse-primary": "#9d79ff",
+              "primary-dim": "#5d00e3",
+              "on-primary-fixed-variant": "#350088",
+              "secondary": "#00647a",
+              "surface-container-lowest": "#ffffff",
+              "on-background": "#2e2f2d",
+              "primary": "#6a1cf6",
+              "on-primary-fixed": "#000000",
+              "on-error": "#ffefef",
+              "inverse-on-surface": "#9d9d9a",
+              "secondary-fixed-dim": "#1cd5ff",
+              "surface-container-highest": "#ddddd8",
+              "error-container": "#f74b6d",
+              "on-secondary": "#e1f6ff",
+              "on-primary-container": "#2a0070",
+              "on-error-container": "#510017",
+              "on-tertiary-container": "#520072",
+              "tertiary-fixed": "#e092ff",
+              "on-secondary-container": "#004e60",
+              "background": "#f7f6f2"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        background-color: #f7f6f2;
+        color: #2e2f2d;
+        font-family: 'Inter', sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(173, 173, 170, 0.15);
+      }
+      .neon-glow:hover {
+        box-shadow: 0 0 20px rgba(106, 28, 246, 0.2);
+      }
+      .editorial-text {
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+      }
+      .ghost-border {
+        border: 1px solid rgba(173, 173, 170, 0.15);
+      }
+      .dark-card {
+        background: #121412;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .dark-card-inner {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      /* New Light Theme Card Classes */
+      .light-glass-card {
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(173, 173, 170, 0.2);
+        box-shadow: 0 10px 30px -5px rgba(0,0,0,0.03);
+      }
+      .light-card-inner {
+        background: rgba(255, 255, 255, 0.4);
+        border: 1px solid rgba(173, 173, 170, 0.1);
+      }
+    </style>
+</head>
+<body class="selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-2xl border-b border-[#adadaa]/15 shadow-[0_20px_40px_-10px_rgba(46,47,45,0.05)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#2e2f2d]">
+                Shunya
+            </div>
+<div class="hidden md:flex items-center space-x-8 font-['Plus_Jakarta_Sans'] font-bold tracking-tight text-sm uppercase">
+<a class="text-[#6a1cf6] border-b-2 border-[#6a1cf6] pb-1" href="#">Home</a>
+<a class="text-[#2e2f2d]/70 hover:text-[#6a1cf6] transition-colors duration-300" href="#services">Services</a>
+<a class="text-[#2e2f2d]/70 hover:text-[#6a1cf6] transition-colors duration-300" href="#portfolio">Portfolio</a>
+<a class="text-[#2e2f2d]/70 hover:text-[#6a1cf6] transition-colors duration-300" href="#about">About</a>
+<a class="text-[#2e2f2d]/70 hover:text-[#6a1cf6] transition-colors duration-300" href="#contact">Contact</a>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full px-6 py-2.5 font-headline font-bold text-sm hover:opacity-90 transition-all scale-95 active:scale-90">
+                Book Strategy Call
+            </button>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-height-[819px] flex items-center justify-center px-6 py-20 overflow-hidden">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-full bg-gradient-to-b from-primary/5 to-transparent blur-3xl -z-10"></div>
+<div class="max-w-5xl text-center space-y-10">
+<div class="inline-flex items-center space-x-2 bg-surface-container-low px-4 py-1.5 rounded-full ghost-border">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-xs font-headline font-bold uppercase tracking-widest text-secondary">India's Leading Performance Agency</span>
+</div>
+<h1 class="font-headline font-extrabold text-5xl md:text-8xl editorial-text text-on-surface">
+                    From Zero to Scale — <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary">Shunya to Success</span>
+</h1>
+<p class="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+                    Business ko bada banana hai? We combine cutting-edge AI with creative storytelling to turn your startup into a category leader. Simple metrics, real growth.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<button class="w-full sm:w-auto bg-primary text-on-primary px-8 py-4 rounded-full font-headline font-bold text-lg shadow-xl shadow-primary/20 hover:scale-105 transition-transform duration-300">
+                        Book Strategy Call
+                    </button>
+<button class="w-full sm:w-auto ghost-border text-on-surface px-8 py-4 rounded-full font-headline font-bold text-lg hover:bg-surface-container-high transition-colors">
+                        View Portfolio
+                    </button>
+</div>
+<!-- Trust Signal Counter -->
+<div class="pt-12 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-outline-variant/10">
+<div class="text-center">
+<div class="text-3xl font-black font-headline text-primary">2000+</div>
+<div class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Leads / Month</div>
+</div>
+<div class="text-center">
+<div class="text-3xl font-black font-headline text-on-surface">50+</div>
+<div class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Brands Scaled</div>
+</div>
+<div class="text-center">
+<div class="text-3xl font-black font-headline text-on-surface">5X</div>
+<div class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Average ROAS</div>
+</div>
+<div class="text-center">
+<div class="text-3xl font-black font-headline text-secondary">24/7</div>
+<div class="text-xs font-label uppercase tracking-widest text-on-surface-variant">AI Support</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section: Glassmorphism Bento Grid -->
+<section class="py-24 px-6 md:px-12 bg-surface-container-low" id="services">
+<div class="max-w-screen-2xl mx-auto">
+<div class="mb-16">
+<h2 class="font-headline font-extrabold text-4xl md:text-5xl text-on-surface">Our Expertise</h2>
+<p class="text-on-surface-variant mt-4 font-body text-lg">Growth ke liye har cheez under one roof.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-6 gap-6">
+<!-- Card 1 -->
+<div class="md:col-span-3 glass-card rounded-3xl p-10 flex flex-col justify-between group hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500">
+<div class="space-y-4">
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+<h3 class="text-2xl font-bold font-headline">Performance Marketing</h3>
+<p class="text-on-surface-variant leading-relaxed">Paid Ads that actually convert. Hum sirf clicks nahi, customers laate hain. Facebook, Google, &amp; LinkedIn dominance.</p>
+</div>
+<div class="mt-8 flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold">ROAS Focus</span>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold">Data Driven</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="md:col-span-3 glass-card rounded-3xl p-10 flex flex-col justify-between group hover:shadow-2xl hover:shadow-secondary/5 transition-all duration-500">
+<div class="space-y-4">
+<span class="material-symbols-outlined text-4xl text-secondary" style="font-variation-settings: 'FILL' 1;">code_blocks</span>
+<h3 class="text-2xl font-bold font-headline">Tech Development</h3>
+<p class="text-on-surface-variant leading-relaxed">Websites and Apps that load faster than your morning chai. Scalable architecture for future-ready businesses.</p>
+</div>
+<div class="mt-8 flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold">Custom SaaS</span>
+<span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold">Next.js Specialists</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="md:col-span-2 glass-card rounded-3xl p-10 group hover:shadow-2xl transition-all">
+<div class="space-y-4">
+<span class="material-symbols-outlined text-4xl text-tertiary" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<h4 class="text-xl font-bold font-headline">AI &amp; Automation</h4>
+<p class="text-on-surface-variant text-sm">Automate repetitive tasks. Hum use karte hain AI to make your marketing 10x smarter.</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="md:col-span-2 glass-card rounded-3xl p-10 group hover:shadow-2xl transition-all">
+<div class="space-y-4">
+<span class="material-symbols-outlined text-4xl text-error" style="font-variation-settings: 'FILL' 1;">movie</span>
+<h4 class="text-xl font-bold font-headline">Content Production</h4>
+<p class="text-on-surface-variant text-sm">Viral-worthy reels and high-production brand films. Storytelling that stops the scroll.</p>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="md:col-span-2 glass-card rounded-3xl p-10 group hover:shadow-2xl transition-all">
+<div class="space-y-4">
+<span class="material-symbols-outlined text-4xl text-primary-dim" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<h4 class="text-xl font-bold font-headline">Offline Marketing</h4>
+<p class="text-on-surface-variant text-sm">Connecting the digital world with physical impact. Events, BTL, and traditional media.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="py-24 px-6 md:px-12 bg-surface">
+<div class="max-w-screen-2xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div>
+<h2 class="font-headline font-extrabold text-4xl md:text-5xl text-on-surface">How We Scale</h2>
+<p class="text-on-surface-variant mt-4 font-body text-lg">Process jo transparent hai aur results jo permanent.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+<!-- Connecting Line -->
+<div class="hidden md:block absolute top-12 left-0 w-full h-[1px] bg-gradient-to-r from-primary/20 via-primary/50 to-primary/20 -z-10"></div>
+<!-- Step 1 -->
+<div class="space-y-6">
+<div class="w-16 h-16 rounded-2xl bg-primary text-on-primary flex items-center justify-center font-black text-2xl shadow-lg shadow-primary/30">01</div>
+<h4 class="text-2xl font-bold font-headline">Audit &amp; Strategy</h4>
+<p class="text-on-surface-variant">Pehle samajhna, phir plan banana. We dive deep into your current data and find growth leaks.</p>
+</div>
+<!-- Step 2 -->
+<div class="space-y-6">
+<div class="w-16 h-16 rounded-2xl bg-secondary text-on-primary flex items-center justify-center font-black text-2xl shadow-lg shadow-secondary/30">02</div>
+<h4 class="text-2xl font-bold font-headline">The Launch Phase</h4>
+<p class="text-on-surface-variant">Execution with precision. Ads go live, funnels are built, and creative engines start firing.</p>
+</div>
+<!-- Step 3 -->
+<div class="space-y-6">
+<div class="w-16 h-16 rounded-2xl bg-primary-container text-on-primary-container flex items-center justify-center font-black text-2xl shadow-lg shadow-primary-container/30">03</div>
+<h4 class="text-2xl font-bold font-headline">Optimization Loop</h4>
+<p class="text-on-surface-variant">Testing, scaling, and repeating. We optimize daily to ensure you get the maximum value for every rupee.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof & Portfolio -->
+<section class="py-24 px-6 md:px-12 overflow-hidden" id="portfolio">
+<div class="max-w-screen-2xl mx-auto space-y-16">
+<div class="flex justify-between items-end">
+<h2 class="font-headline font-extrabold text-4xl md:text-5xl">Proven Results</h2>
+<a class="hidden md:block font-bold text-primary hover:underline underline-offset-8" href="#">All Case Studies →</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="group cursor-pointer overflow-hidden rounded-3xl relative h-[400px]">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="modern data analytics dashboard on a laptop with vibrant colorful graphs and business growth indicators" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZIgT0ZD2_DZctHJc7e9Y0GTvNv8zKEAEnMWjuhwYjS3Zcx9Kfxmb0TPBjaJhp-VLy6r8xpVex9_nEIwv99XqcKRyrRyQ2xMgcbjedwquiZ0Lfbv7e1rbS1rWb2hcvrxSZAfu-1ipjUcAm2RteC7eZRn_kwy_jovTGxE78Se4vNKoH3cmtx4lcuJ0egq24cLB1_PlOS1DL0AVZxHjrKVJGkHzwroxU642JWFe-H_WpG4yGFQijoNvp2Fcx9XavEcSbliQzN9M7Who"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8 space-y-2">
+<span class="text-xs font-bold uppercase tracking-widest text-primary-fixed bg-primary/20 px-3 py-1 rounded-full">E-commerce</span>
+<h4 class="text-2xl font-bold text-white">400% Revenue Jump in 6 Months</h4>
+<p class="text-white/70 text-sm">Scaling a D2C jewelry brand through AI-driven Meta Ads.</p>
+</div>
+</div>
+<div class="group cursor-pointer overflow-hidden rounded-3xl relative h-[400px]">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="team working in a high-tech modern office environment with large windows and neon accent lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtycfqaeKgZhoo9HxA3m8iipwVSPadgrVyBxVbW9abzNmWa9162OPurOIIPJ14iFAYG0Mw3oWCQd8UBA1xim7ahRRAcgLvcH42IjfcCVENi5CYrMExaC3sXks_wjU5XEjXaCNn0hs5A1k8Attqr6_huYbnhr4QKjVoH-QnLYR4dgtOC5AzgRdKP8Dj7FIYvUAK2r23N2B7p0V3HkJT-_vKwDqZ2xvT9pdEk82ExmrjDhv81S1z3UrT2lOBl4gfUBzfhhhWQetHQMM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8 space-y-2">
+<span class="text-xs font-bold uppercase tracking-widest text-secondary-fixed bg-secondary/20 px-3 py-1 rounded-full">FinTech</span>
+<h4 class="text-2xl font-bold text-white">80k+ High-Quality Leads Generated</h4>
+<p class="text-white/70 text-sm">Cost-effective lead generation for a new-age investment platform.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Results That Speak Section (Updated to Light Theme) -->
+<section class="py-24 px-6 md:px-12 bg-surface">
+<div class="max-w-screen-2xl mx-auto space-y-16">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div>
+<span class="text-xs font-headline font-bold uppercase tracking-[0.3em] text-secondary">Proof of Work</span>
+<h2 class="font-headline font-extrabold text-5xl md:text-7xl mt-4 editorial-text text-on-surface">Results That <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary">Speak.</span></h2>
+</div>
+<a class="font-bold text-primary hover:text-on-surface transition-colors flex items-center gap-2 group" href="#">
+                        View All Case Studies 
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Case Study Card 1 -->
+<div class="light-glass-card rounded-3xl p-8 space-y-8 group hover:shadow-xl transition-all duration-300">
+<div class="flex justify-between items-start">
+<span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest border border-primary/20">E-Commerce</span>
+<span class="text-[10px] text-on-surface-variant uppercase tracking-widest">Performance Marketing</span>
+</div>
+<div class="space-y-4">
+<h3 class="text-2xl font-bold font-headline text-on-surface">D2C Fashion Brand</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Rebuilt their Meta Ads strategy, created high-converting video creatives, and launched retargeting funnels.</p>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<div class="light-card-inner rounded-2xl p-5">
+<div class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">ROAS</div>
+<div class="text-xl font-black font-headline text-on-surface">1.8x <span class="text-primary mx-2">→</span> <span class="text-primary-dim">7.2x</span></div>
+</div>
+<div class="light-card-inner rounded-2xl p-5">
+<div class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Monthly Revenue</div>
+<div class="text-xl font-black font-headline text-on-surface">₹8L <span class="text-primary mx-2">→</span> <span class="text-primary-dim">₹52L</span></div>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:underline group" href="#">
+                            Read Case Study
+                            <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">north_east</span>
+</a>
+</div>
+<!-- Case Study Card 2 -->
+<div class="light-glass-card rounded-3xl p-8 space-y-8 group hover:shadow-xl transition-all duration-300">
+<div class="flex justify-between items-start">
+<span class="px-4 py-1.5 rounded-full bg-secondary/10 text-secondary text-[10px] font-bold uppercase tracking-widest border border-secondary/20">Real Estate</span>
+<span class="text-[10px] text-on-surface-variant uppercase tracking-widest">Lead Generation</span>
+</div>
+<div class="space-y-4">
+<h3 class="text-2xl font-bold font-headline text-on-surface">Real Estate Group</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Full-funnel rebuild with AI chatbot qualification, Google Ads + SEO combo, and CRM automation.</p>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<div class="light-card-inner rounded-2xl p-5">
+<div class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Cost Per Lead</div>
+<div class="text-xl font-black font-headline text-on-surface">₹2,800 <span class="text-secondary mx-2">→</span> <span class="text-secondary">₹200</span></div>
+</div>
+<div class="light-card-inner rounded-2xl p-5">
+<div class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Monthly Leads</div>
+<div class="text-xl font-black font-headline text-on-surface">12 <span class="text-secondary mx-2">→</span> <span class="text-secondary">340</span></div>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 text-secondary font-bold text-sm hover:underline group" href="#">
+                            Read Case Study
+                            <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">north_east</span>
+</a>
+</div>
+<!-- Case Study Card 3 -->
+<div class="light-glass-card rounded-3xl p-8 space-y-8 group hover:shadow-xl transition-all duration-300">
+<div class="flex justify-between items-start">
+<span class="px-4 py-1.5 rounded-full bg-tertiary-container/10 text-tertiary text-[10px] font-bold uppercase tracking-widest border border-tertiary-container/20">EdTech</span>
+<span class="text-[10px] text-on-surface-variant uppercase tracking-widest">Website + AI</span>
+</div>
+<div class="space-y-4">
+<h3 class="text-2xl font-bold font-headline text-on-surface">EdTech Platform</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Redesigned website with AI chatbot handling 70% of queries, plus automated email nurture sequences.</p>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<div class="light-card-inner rounded-2xl p-5">
+<div class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Conversion Rate</div>
+<div class="text-xl font-black font-headline text-on-surface">2% <span class="text-tertiary mx-2">→</span> <span class="text-tertiary">12%</span></div>
+</div>
+<div class="light-card-inner rounded-2xl p-5">
+<div class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Support Load</div>
+<div class="text-xl font-black font-headline text-on-surface">100% <span class="text-tertiary mx-2">→</span> <span class="text-tertiary">30%</span></div>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 text-tertiary font-bold text-sm hover:underline group" href="#">
+                            Read Case Study
+                            <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">north_east</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonial Slider Preview -->
+<section class="py-24 px-6 md:px-12 bg-surface">
+<div class="max-w-screen-2xl mx-auto">
+<div class="bg-surface-container-low p-12 rounded-3xl">
+<div class="max-w-3xl mx-auto text-center space-y-8">
+<div class="flex justify-center text-primary">
+<span class="material-symbols-outlined text-5xl">format_quote</span>
+</div>
+<p class="text-2xl font-headline font-semibold italic text-on-surface">
+                            "Shunya is not just an agency, they are our growth partners. Inki strategy aur execution ne humein scale karne mein bohot help ki. Highly recommended!"
+                        </p>
+<div class="flex items-center justify-center space-x-4">
+<div class="w-14 h-14 rounded-full bg-surface-container-high overflow-hidden ghost-border">
+<img class="w-full h-full object-cover" data-alt="professional headshot of a middle-aged male executive in a smart casual suit, soft professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_pxIHbyHxrj_2R6SQXT4ZN7gjp125ExoSw4e8mkMGUxxl7HkmnpSeT8wrBhgzs-DReiyMTdDhBOepojHKPTv3VGGy25VDuGx6Rywu_J1rNXPfhPk0TeFg_-HHPzCksIDVCNZ3r_Btf_dtALZQHhmYYS6b1Yl2xdbHD5Cb6iY32s_W1ICoM-ANoqlUfXzPl_bvDg9pQSUFUfBo4jF9Q7YpBp8w2pWHQY0DAggv0d3mQVBG8oq_D9lheKM9_PVEf_4ZKME54926Q5o"/>
+</div>
+<div class="text-left">
+<div class="font-bold text-on-surface">Rahul Sharma</div>
+<div class="text-sm text-on-surface-variant">Founder, UrbanStay India</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 px-6 md:px-12 bg-primary">
+<div class="max-w-5xl mx-auto text-center space-y-12">
+<h2 class="font-headline font-extrabold text-4xl md:text-6xl text-on-primary">Ready to move from <span class="underline decoration-secondary decoration-4">Zero to Success?</span></h2>
+<p class="text-on-primary/80 text-xl font-body">Contact us today. Let's discuss your business growth trajectory.</p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<button class="bg-white text-primary px-10 py-5 rounded-full font-headline font-black text-xl hover:shadow-2xl hover:bg-surface transition-all">
+                        Let's Talk Growth
+                    </button>
+<a class="text-on-primary font-bold border-b border-on-primary/30 pb-1 hover:border-on-primary transition-colors" href="mailto:hello@shunya.agency">hello@shunya.agency</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#adadaa]/10 bg-[#f1f1ed]">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-screen-2xl mx-auto">
+<div class="space-y-6">
+<div class="text-xl font-bold text-[#2e2f2d]">Shunya Marketing</div>
+<p class="text-sm text-[#2e2f2d]/60 font-['Inter'] leading-relaxed">
+                    India's performance-led growth engine. We turn zero-stage startups into category-leading successes through AI and creativity.
+                </p>
+<div class="flex space-x-4">
+<a class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">alternate_email</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-on-surface">Services</h4>
+<ul class="space-y-2 text-sm text-[#2e2f2d]/60">
+<li><a class="hover:text-[#2e2f2d] hover:translate-x-1 transition-transform inline-block" href="#">Ads &amp; Performance</a></li>
+<li><a class="hover:text-[#2e2f2d] hover:translate-x-1 transition-transform inline-block" href="#">Tech &amp; SaaS</a></li>
+<li><a class="hover:text-[#2e2f2d] hover:translate-x-1 transition-transform inline-block" href="#">AI Automations</a></li>
+<li><a class="hover:text-[#2e2f2d] hover:translate-x-1 transition-transform inline-block" href="#">Content Studio</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-on-surface">Company</h4>
+<ul class="space-y-2 text-sm text-[#2e2f2d]/60">
+<li><a class="hover:text-[#2e2f2d] hover:translate-x-1 transition-transform inline-block" href="#">About Us</a></li>
+<li><a class="hover:text-[#2e2f2d] hover:translate-x-1 transition-transform inline-block" href="#">Portfolio</a></li>
+<li><a class="hover:text-[#2e2f2d] hover:translate-x-1 transition-transform inline-block" href="#">Careers</a></li>
+<li><a class="hover:text-[#2e2f2d] hover:translate-x-1 transition-transform inline-block" href="#">Contact</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-on-surface">Legal</h4>
+<ul class="space-y-2 text-sm text-[#2e2f2d]/60">
+<li><a class="hover:text-[#2e2f2d] hover:translate-x-1 transition-transform inline-block" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-[#2e2f2d] hover:translate-x-1 transition-transform inline-block" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="px-12 py-6 border-t border-outline-variant/10 max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-[#2e2f2d]/60">© 2024 Shunya Marketing Services. All rights reserved.</p>
+<div class="text-xs text-[#2e2f2d]/60 font-bold uppercase tracking-tighter">Made with ❤️ in India</div>
+</div>
+</footer>
+<!-- Conversion Elements -->
+<!-- Floating WhatsApp -->
+<a class="fixed bottom-8 right-8 z-50 group" href="https://wa.me/yournumber" target="_blank">
+<div class="bg-[#25D366] text-white p-4 rounded-full shadow-2xl group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+<svg class="w-7 h-7 fill-current" viewbox="0 0 24 24">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.63 1.438h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
+</svg>
+</div>
+<div class="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-white px-4 py-2 rounded-xl ghost-border text-sm font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
+            Chat with us
+        </div>
+</a>
+<!-- AI Chatbot Popup (Static Design) -->
+<div class="fixed bottom-8 left-8 z-50 w-72 md:w-80 glass-card rounded-2xl shadow-2xl overflow-hidden hidden md:block">
+<div class="bg-primary p-4 flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-lg">smart_toy</span>
+</div>
+<div class="text-white">
+<div class="text-xs font-bold leading-none">Shunya AI Bot</div>
+<div class="text-[10px] opacity-70">Online</div>
+</div>
+</div>
+<button class="text-white/50 hover:text-white"><span class="material-symbols-outlined text-lg">close</span></button>
+</div>
+<div class="p-4 h-48 overflow-y-auto space-y-4 text-xs font-body">
+<div class="flex flex-col space-y-1">
+<div class="bg-surface-container-high p-3 rounded-tr-xl rounded-br-xl rounded-bl-xl max-w-[85%]">
+                    Hello! Kya aap apna business scale karna chahte hain? 🚀
+                </div>
+<span class="text-[9px] text-on-surface-variant ml-1">10:02 AM</span>
+</div>
+<div class="flex flex-col items-end space-y-1">
+<div class="bg-primary/10 p-3 rounded-tl-xl rounded-bl-xl rounded-br-xl max-w-[85%] text-on-surface">
+                    Haan, performance marketing services chahiye.
+                </div>
+<span class="text-[9px] text-on-surface-variant mr-1">10:03 AM</span>
+</div>
+</div>
+<div class="p-4 border-t border-outline-variant/10 flex items-center space-x-2">
+<input class="flex-1 bg-surface-container-low border-none rounded-lg text-xs focus:ring-1 focus:ring-primary" placeholder="Type here..." type="text"/>
+<button class="text-primary hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</body></html>

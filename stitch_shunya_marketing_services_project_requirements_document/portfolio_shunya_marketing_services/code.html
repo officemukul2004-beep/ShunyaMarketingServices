@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio | Shunya Marketing Services</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#e8e8e4",
+              "inverse-surface": "#0d0f0d",
+              "error-dim": "#a70138",
+              "on-surface-variant": "#5b5c59",
+              "primary-container": "#ac8eff",
+              "on-tertiary": "#ffedff",
+              "tertiary-fixed-dim": "#d97dff",
+              "secondary-dim": "#00576a",
+              "surface-dim": "#d4d5d0",
+              "on-surface": "#2e2f2d",
+              "tertiary-container": "#e092ff",
+              "tertiary-dim": "#8200b1",
+              "on-tertiary-fixed-variant": "#600084",
+              "surface-tint": "#6a1cf6",
+              "primary-fixed": "#ac8eff",
+              "tertiary": "#9400ca",
+              "primary-fixed-dim": "#a07dff",
+              "on-primary": "#f7f0ff",
+              "secondary-fixed": "#79dfff",
+              "on-tertiary-fixed": "#2c003f",
+              "surface-variant": "#ddddd8",
+              "on-secondary-fixed": "#003a47",
+              "surface": "#f7f6f2",
+              "outline": "#767774",
+              "surface-container-high": "#e3e3de",
+              "surface-bright": "#f7f6f2",
+              "error": "#b41340",
+              "outline-variant": "#adadaa",
+              "secondary-container": "#79dfff",
+              "on-secondary-fixed-variant": "#00586c",
+              "surface-container-low": "#f1f1ed",
+              "inverse-primary": "#9d79ff",
+              "primary-dim": "#5d00e3",
+              "on-primary-fixed-variant": "#350088",
+              "secondary": "#00647a",
+              "surface-container-lowest": "#ffffff",
+              "on-background": "#2e2f2d",
+              "primary": "#6a1cf6",
+              "on-primary-fixed": "#000000",
+              "on-error": "#ffefef",
+              "inverse-on-surface": "#9d9d9a",
+              "secondary-fixed-dim": "#1cd5ff",
+              "surface-container-highest": "#ddddd8",
+              "error-container": "#f74b6d",
+              "on-secondary": "#e1f6ff",
+              "on-primary-container": "#2a0070",
+              "on-error-container": "#510017",
+              "on-tertiary-container": "#520072",
+              "tertiary-fixed": "#e092ff",
+              "on-secondary-container": "#004e60",
+              "background": "#f7f6f2"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(173, 173, 170, 0.15);
+        }
+        .neon-glow-primary:hover {
+            box-shadow: 0 0 20px rgba(106, 28, 246, 0.2);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #6a1cf6 0%, #00647a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-2xl border-b border-[#adadaa]/15 shadow-[0_20px_40px_-10px_rgba(46,47,45,0.05)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#2e2f2d] dark:text-zinc-100">
+                Shunya Marketing Services
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#2e2f2d]/70 hover:text-[#6a1cf6] transition-colors duration-300 font-headline font-bold tracking-tight text-sm uppercase" href="#">Home</a>
+<a class="text-[#2e2f2d]/70 hover:text-[#6a1cf6] transition-colors duration-300 font-headline font-bold tracking-tight text-sm uppercase" href="#">Services</a>
+<a class="text-[#6a1cf6] border-b-2 border-[#6a1cf6] pb-1 font-headline font-bold tracking-tight text-sm uppercase" href="#">Portfolio</a>
+<a class="text-[#2e2f2d]/70 hover:text-[#6a1cf6] transition-colors duration-300 font-headline font-bold tracking-tight text-sm uppercase" href="#">About</a>
+<a class="text-[#2e2f2d]/70 hover:text-[#6a1cf6] transition-colors duration-300 font-headline font-bold tracking-tight text-sm uppercase" href="#">Contact</a>
+</div>
+<button class="bg-gradient-to-r from-primary to-secondary text-on-primary px-6 py-2.5 rounded-full font-headline font-bold tracking-tight text-sm uppercase scale-95 active:scale-90 transition-transform hover:opacity-90 shadow-lg shadow-primary/20">
+                Book Strategy Call
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="pt-40 pb-20 px-8 max-w-screen-2xl mx-auto">
+<div class="max-w-4xl">
+<h1 class="font-headline font-extrabold text-6xl md:text-7xl lg:text-8xl tracking-tighter leading-[0.9] mb-8">
+                THE <span class="text-gradient">LUMINOUS</span> ARCHIVE.
+            </h1>
+<p class="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                A showcase of high-performance digital interventions. We bridge the gap between creative intuition and data-driven results.
+            </p>
+</div>
+</header>
+<!-- Filter System -->
+<section class="px-8 pb-12 max-w-screen-2xl mx-auto overflow-x-auto">
+<div class="flex items-center gap-4 min-w-max">
+<button class="px-8 py-3 rounded-full bg-primary text-on-primary font-headline font-bold text-sm tracking-tight shadow-lg shadow-primary/25">All Work</button>
+<button class="px-8 py-3 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-all font-headline font-semibold text-sm tracking-tight outline-variant/15 border border-outline-variant/15">Ads Creatives</button>
+<button class="px-8 py-3 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-all font-headline font-semibold text-sm tracking-tight outline-variant/15 border border-outline-variant/15">Websites</button>
+<button class="px-8 py-3 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-all font-headline font-semibold text-sm tracking-tight outline-variant/15 border border-outline-variant/15">Video Production</button>
+<button class="px-8 py-3 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-all font-headline font-semibold text-sm tracking-tight outline-variant/15 border border-outline-variant/15">AI Solutions</button>
+</div>
+</section>
+<!-- Portfolio Bento Grid -->
+<main class="px-8 pb-32 max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Featured Item: Ad Creative -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl glass-card">
+<div class="aspect-[16/9] overflow-hidden">
+<img alt="Ad Creative Performance" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern split-screen showing a comparison of two marketing ad designs, one muted and one vibrant with neon accents, dynamic layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzWIVZmXH0F2_UOrYOx8vXVS2Kxl8AY7KlwbO77P1UeIOy-YgnKGJKnmE3mXuiA6Ln8DX-DgEv8dFUumZHXgm2uxTnkNC3Qe3T9C4VXLvZS7ataSm2I4euj3H_3ZEyhRW4r0bfPQLBDMELehqz8eXyupbZ6Nfuv58yQ-25xfQfzA7oKWd0CsXTceZQKRMO0xlhX-rGXCy8WZ0k2TyEmFwliT7er9M9B7wybanWIx84RkWOqTdOBWgoGyBIcJXtOnEZk1SoJtCrUug"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<div class="flex items-center gap-3 mb-4">
+<span class="bg-primary/20 backdrop-blur-md text-primary-container px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest border border-primary/30">Ads Creatives</span>
+<span class="text-white/60 text-xs font-medium">FinTech Sector</span>
+</div>
+<h3 class="font-headline font-extrabold text-3xl md:text-4xl text-white mb-6">Global Pulse Campaign</h3>
+<div class="flex flex-wrap gap-8 items-center border-t border-white/10 pt-6">
+<div>
+<p class="text-white/50 text-[10px] uppercase font-bold tracking-widest mb-1">Results</p>
+<p class="text-primary-container font-headline font-extrabold text-2xl">ROAS 4.5x</p>
+</div>
+<div>
+<p class="text-white/50 text-[10px] uppercase font-bold tracking-widest mb-1">Growth</p>
+<p class="text-primary-container font-headline font-extrabold text-2xl">+30% MoM</p>
+</div>
+<a class="ml-auto bg-white text-on-surface w-12 h-12 rounded-full flex items-center justify-center hover:bg-primary-container hover:text-white transition-colors duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="arrow_outward">arrow_outward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Side Item: Web Design -->
+<div class="md:col-span-4 group rounded-xl bg-surface-container-lowest border border-outline-variant/15 overflow-hidden flex flex-col">
+<div class="aspect-square relative overflow-hidden">
+<img alt="Web Design Showcase" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Minimalist website interface displayed on a sleek laptop screen, elegant typography, dark mode aesthetic, smooth layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk9WsH7o6elgHwBlzCKnzkHXWtGy0h6wtIvByjJi9sIP3PcR2Chjp2w_m6OrN3jNZ6ve6xlwfT9g5sWIGUK7jAiotnnxB7tRPasj6cTT2FfnvCldx42CG88p44ruTCPvg5WXCgfttK8ymTXUo5qPTkL9r6-EBQpHqOycbgiQ3f8T-f9TjNGaF-zPaxtyIDVfrxRWORQNHzVCk-GH4AhGR5R6ZJzYqzV5vysJ1C3fmbd9NIgwrHZg8eaHPnY-im0-plsYRtjBzXpDg"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur shadow-sm px-4 py-2 rounded-full font-headline font-bold text-xs uppercase tracking-tighter">Web Dev</div>
+</div>
+<div class="p-8 flex-grow flex flex-col justify-between">
+<div>
+<h4 class="font-headline font-bold text-xl mb-2 text-on-surface">Lumina SaaS Portal</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">High-conversion landing page optimized for lead generation and user retention.</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg flex items-center justify-between">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Success Metric</span>
+<span class="text-secondary font-headline font-extrabold text-lg">200k Leads</span>
+</div>
+</div>
+</div>
+<!-- Video Production Card -->
+<div class="md:col-span-4 group relative rounded-xl overflow-hidden glass-card">
+<div class="aspect-video relative overflow-hidden">
+<img alt="Cinematic Video Production" class="w-full h-full object-cover" data-alt="Cinematic shot of a professional camera rig on a dolly, golden hour lighting, blurred studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzeyZGhSMRIcu20khqC9CKxVdQ3m8stzvGQlSUqBUbFtmr7-Br7FvNDvzvoOx88_8-0zeaOUPKtWHyNGDMC94RxE-r50yplglF74arvHwqDizBuiB-J744VfrtM0rnJKswlm9DfLGBjkSQZAKnPjK7PkySxVZ5-xZhTaOPZmgrC7a2ABv4XSFxCTiN46V8G7lihQo9glqzX4sBndWcMDpZOVnBHfM47WPLYyvnSfg5chGbhi2-1gzPTj6MmfLRMlimgWuQG4Rqb90"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur-xl border border-white/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="play_arrow" data-weight="fill">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline font-bold text-lg mb-2">Heritage Whiskey Documentary</h4>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest font-bold mb-4">Video Production</p>
+<div class="flex items-center gap-2 text-secondary font-bold text-sm">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>1.2M Combined Views</span>
+</div>
+</div>
+</div>
+<!-- AI Case Study -->
+<div class="md:col-span-8 group relative rounded-xl bg-gradient-to-br from-[#121212] to-[#2a2a2a] overflow-hidden p-10 flex flex-col md:flex-row gap-10 items-center">
+<div class="flex-1 text-white">
+<div class="inline-block px-3 py-1 rounded-full bg-tertiary-dim/30 border border-tertiary/40 text-tertiary-fixed text-[10px] font-black uppercase tracking-widest mb-6">AI Optimization</div>
+<h3 class="font-headline font-extrabold text-4xl mb-6">NexGen CRM Automations</h3>
+<p class="text-white/60 mb-8 leading-relaxed">Implementing custom AI agents that reduced customer support response times by 85% while increasing sales conversion.</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white/5 p-4 rounded-xl border border-white/10">
+<p class="text-white/40 text-[10px] font-bold uppercase mb-1">Efficiency</p>
+<p class="font-headline font-black text-2xl">85% Faster</p>
+</div>
+<div class="bg-white/5 p-4 rounded-xl border border-white/10">
+<p class="text-white/40 text-[10px] font-bold uppercase mb-1">Conversion</p>
+<p class="font-headline font-black text-2xl">+12.4%</p>
+</div>
+</div>
+</div>
+<div class="flex-1 w-full aspect-square relative">
+<img alt="AI Visualization" class="w-full h-full object-cover rounded-2xl shadow-2xl opacity-80 transition-all duration-700 group-hover:scale-105 group-hover:opacity-100" data-alt="Abstract 3D visualization of neural networks and data particles floating in a dark void with violet and cyan glowing accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_kuWSvUUvKuX3sD6pk9wTnPK2s5F0seomWgX_HsYqOWw-eXIytz3CcjSftfwgROpobC_7i730z2MDGteeVdUsw48vfzUQH6QszaseqMx3Hx_3uyo72LRhcQCJbOZ6swPnQYKcmfDr2BrwryXb9IOYkmCVkVq-FLdJ1F1LgBric8nJh_wPjA68hJZXGMzNm9CAcp23P4PzcITUFryehTUeRPcoWf5pBxyEXtHZEPXdxZcMZ6ET43Oi901m2_jH16RBi5c6x_eQZIE"/>
+</div>
+</div>
+<!-- Standard Card: Web -->
+<div class="md:col-span-4 group rounded-xl glass-card overflow-hidden">
+<div class="p-8">
+<div class="flex justify-between items-start mb-12">
+<div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="web">web</span>
+</div>
+<span class="text-on-surface-variant font-headline font-bold text-[10px] uppercase tracking-widest">E-Commerce</span>
+</div>
+<h4 class="font-headline font-bold text-2xl mb-4">Velvet Bloom Boutique</h4>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed">Complete digital overhaul and headless commerce implementation.</p>
+<div class="flex items-end justify-between">
+<div>
+<p class="text-xs font-bold text-on-surface-variant uppercase mb-1">Growth</p>
+<p class="text-3xl font-headline font-black text-primary">2.5x</p>
+</div>
+<button class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                            View Case Study <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Standard Card: Ad Creatives -->
+<div class="md:col-span-4 group rounded-xl glass-card overflow-hidden">
+<div class="p-8">
+<div class="flex justify-between items-start mb-12">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="ads_click">ads_click</span>
+</div>
+<span class="text-on-surface-variant font-headline font-bold text-[10px] uppercase tracking-widest">Performance</span>
+</div>
+<h4 class="font-headline font-bold text-2xl mb-4">SwiftRide App Launch</h4>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed">Dynamic creative optimization across Instagram &amp; TikTok.</p>
+<div class="flex items-end justify-between">
+<div>
+<p class="text-xs font-bold text-on-surface-variant uppercase mb-1">CPA</p>
+<p class="text-3xl font-headline font-black text-secondary">-40%</p>
+</div>
+<button class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                            View Work <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Standard Card: Branding -->
+<div class="md:col-span-4 group rounded-xl bg-surface-container-high border border-outline-variant/30 overflow-hidden">
+<div class="p-8">
+<div class="flex justify-between items-start mb-12">
+<div class="w-12 h-12 bg-on-surface/10 rounded-xl flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+</div>
+<span class="text-on-surface-variant font-headline font-bold text-[10px] uppercase tracking-widest">Brand Identity</span>
+</div>
+<h4 class="font-headline font-bold text-2xl mb-4">Aura Wellness Lab</h4>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed">Visual identity, packaging, and digital presence for a premium health brand.</p>
+<div class="flex items-end justify-between">
+<div>
+<p class="text-xs font-bold text-on-surface-variant uppercase mb-1">Retention</p>
+<p class="text-3xl font-headline font-black text-on-surface">92%</p>
+</div>
+<button class="text-on-surface font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                            Explore <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Call to Action -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-40">
+<div class="bg-inverse-surface text-white px-8 py-4 rounded-full flex items-center gap-6 shadow-2xl border border-white/10 backdrop-blur-xl">
+<span class="hidden md:inline font-headline font-bold text-sm tracking-tight text-white/70">Ready to scale your brand?</span>
+<div class="h-4 w-px bg-white/20 hidden md:block"></div>
+<button class="flex items-center gap-2 bg-primary px-5 py-2 rounded-full font-headline font-extrabold text-sm uppercase tracking-tighter hover:bg-primary-container hover:text-on-primary-container transition-all active:scale-95">
+                Book a Strategy Call <span class="material-symbols-outlined text-lg" data-icon="calendar_month">calendar_month</span>
+</button>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full border-t border-[#adadaa]/10 bg-[#f1f1ed] dark:bg-zinc-950">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-screen-2xl mx-auto">
+<div class="md:col-span-1">
+<div class="text-xl font-bold text-[#2e2f2d] dark:text-zinc-100 mb-6">
+                    Shunya Marketing Services
+                </div>
+<p class="text-[#2e2f2d]/60 dark:text-zinc-500 font-body text-sm leading-relaxed">
+                    High-performance digital agency helping brands achieve exponential growth through creative data-driven strategies.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-[#6a1cf6] font-semibold text-sm uppercase tracking-widest">Services</h5>
+<a class="text-[#2e2f2d]/60 dark:text-zinc-500 hover:text-[#2e2f2d] dark:hover:text-zinc-200 transition-all font-body text-sm" href="#">Performance Marketing</a>
+<a class="text-[#2e2f2d]/60 dark:text-zinc-500 hover:text-[#2e2f2d] dark:hover:text-zinc-200 transition-all font-body text-sm" href="#">Web Experience</a>
+<a class="text-[#2e2f2d]/60 dark:text-zinc-500 hover:text-[#2e2f2d] dark:hover:text-zinc-200 transition-all font-body text-sm" href="#">Content Creation</a>
+<a class="text-[#2e2f2d]/60 dark:text-zinc-500 hover:text-[#2e2f2d] dark:hover:text-zinc-200 transition-all font-body text-sm" href="#">AI Automations</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-[#6a1cf6] font-semibold text-sm uppercase tracking-widest">Connect</h5>
+<a class="text-[#2e2f2d]/60 dark:text-zinc-500 hover:text-[#2e2f2d] dark:hover:text-zinc-200 transition-all font-body text-sm" href="#">LinkedIn</a>
+<a class="text-[#2e2f2d]/60 dark:text-zinc-500 hover:text-[#2e2f2d] dark:hover:text-zinc-200 transition-all font-body text-sm" href="#">X / Twitter</a>
+<a class="text-[#2e2f2d]/60 dark:text-zinc-500 hover:text-[#2e2f2d] dark:hover:text-zinc-200 transition-all font-body text-sm" href="#">Instagram</a>
+<a class="text-[#2e2f2d]/60 dark:text-zinc-500 hover:text-[#2e2f2d] dark:hover:text-zinc-200 transition-all font-body text-sm" href="#">YouTube</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-[#6a1cf6] font-semibold text-sm uppercase tracking-widest">Newsletter</h5>
+<p class="text-xs text-on-surface-variant mb-2 leading-relaxed">Insights on marketing growth and AI innovations.</p>
+<div class="flex gap-2">
+<input class="bg-surface border-none rounded-lg text-sm px-4 flex-grow focus:ring-1 focus:ring-primary" placeholder="Email address" type="email"/>
+<button class="bg-on-surface text-white p-2 rounded-lg"><span class="material-symbols-outlined text-sm" data-icon="send">send</span></button>
+</div>
+</div>
+</div>
+<div class="max-w-screen-2xl mx-auto px-12 py-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="text-[#2e2f2d]/60 dark:text-zinc-500 font-body text-xs">
+                © 2024 Shunya Marketing Services. All rights reserved.
+            </div>
+<div class="flex gap-8">
+<a class="text-[#2e2f2d]/60 dark:text-zinc-500 hover:text-[#2e2f2d] dark:hover:text-zinc-200 transition-all text-xs" href="#">Privacy Policy</a>
+<a class="text-[#2e2f2d]/60 dark:text-zinc-500 hover:text-[#2e2f2d] dark:hover:text-zinc-200 transition-all text-xs" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

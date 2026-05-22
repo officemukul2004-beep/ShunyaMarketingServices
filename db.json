@@ -1,0 +1,128 @@
+{
+  "seo": [
+    {
+      "page": "index",
+      "title": "Shunya Marketing Services | Scale Your Brand Beyond Limits",
+      "description": "India's leading B2B performance marketing & automation agency. We combine cutting-edge AI integrations with premium creative systems.",
+      "keywords": "marketing, performance marketing, AI automation, B2B growth, SaaS scale"
+    },
+    {
+      "page": "about",
+      "title": "About Us | Shunya Marketing Services",
+      "description": "We build the systems that build your brand. Learn about the Shunya methodology, our core values, and the team driving high-leverage growth.",
+      "keywords": "about shunya, growth systems, performance methodology"
+    },
+    {
+      "page": "services",
+      "title": "Our Services | Shunya Marketing Services",
+      "description": "Explore our high-converting growth expertise: Performance Marketing, SaaS development, AI Automations, and Premium Creatives.",
+      "keywords": "performance ads, AI automation, web development, SaaS builder"
+    },
+    {
+      "page": "portfolio",
+      "title": "Portfolio | Shunya Marketing Services",
+      "description": "A curated archive of high-performance digital interventions, growth metrics, and B2B case studies.",
+      "keywords": "luminous archive, case studies, client results"
+    },
+    {
+      "page": "contact",
+      "title": "Book a Strategy Call | Shunya Marketing Services",
+      "description": "Ready to scale your business? Book a direct growth audit with our strategy team.",
+      "keywords": "contact us, book strategy, growth audit"
+    },
+    {
+      "page": "blog",
+      "title": "Growth Insights | Shunya Marketing Services",
+      "description": "Weekly perspectives on AI-driven growth, B2B sales automation, and scaling methodologies.",
+      "keywords": "growth blog, marketing blog, startup automation"
+    },
+    {
+      "page": "case-study",
+      "title": "D2C Fashion Case Study | Shunya Marketing Services",
+      "description": "How we scaled an early-stage D2C apparel brand from $10k to $100k MRR in 90 days.",
+      "keywords": "case study, D2C scale, growth audit"
+    },
+    {
+      "page": "privacy",
+      "title": "Privacy Policy | Shunya Marketing Services",
+      "description": "Our terms, data practices, and privacy commitments.",
+      "keywords": "privacy policy, data terms"
+    }
+  ],
+  "blogs": [
+    {
+      "id": "1",
+      "title": "Deep Learning Frameworks for Startups",
+      "slug": "deep-learning-frameworks",
+      "category": "Strategy",
+      "readTime": "6 min read",
+      "author": "Arjun Mehta",
+      "date": "May 19, 2026",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "summary": "Implementing predictive marketing models and automated attribution for early-stage SaaS and high-velocity startups.",
+      "content": "<p class=\"text-xl font-medium leading-relaxed text-on-surface mb-8\">The startup landscape has shifted. It’s no longer about who has the most capital, but who can leverage the highest degree of operational leverage through artificial intelligence. At Shunya, we build the systems that turn this leverage into compound growth.</p><h2 class=\"text-3xl font-headline font-bold text-on-surface mt-12 mb-6\">The New Machine Era</h2><p class=\"mb-6\">Traditional performance marketing is yielding diminishing returns. High CAC (Customer Acquisition Cost) and privacy regulations mean agencies must look beyond simple buying strategies. The answer lies in predictive attribution models built directly into client SaaS products.</p><p class=\"mb-6\">By analyzing patterns of early user engagement, our systems forecast client lifetime value (LTV) within 48 hours of signup, allowing ad platforms to optimize bids for high-value cohorts instantly.</p><h2 class=\"text-3xl font-headline font-bold text-on-surface mt-12 mb-6\">Key Levers for High-Velocity Startups</h2><ul class=\"space-y-4 mb-8\"><li><b>Unified Data Streams:</b> Aligning customer database inputs with active ad platforms.</li><li><b>Attribution Nodes:</b> Client-side scripts that bypass standard tracking drops.</li></ul>"
+    },
+    {
+      "id": "2",
+      "title": "Maximizing ROAS in the Post-Cookie Era",
+      "slug": "maximizing-roas",
+      "category": "Performance",
+      "readTime": "5 min read",
+      "author": "Sarah Jenkins",
+      "date": "May 15, 2026",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
+      "summary": "New tracking strategies and advanced server-side tagging methodologies for accurate attribution when traditional browsers block cookie scripts.",
+      "content": "<p class=\"text-xl font-medium leading-relaxed text-on-surface mb-8\">Apple's iOS updates and browser tracking restrictions have blind-sided standard ad attribution. If you are relying on pixel tracking, your attribution is up to 40% under-reported.</p><h2 class=\"text-3xl font-headline font-bold text-on-surface mt-12 mb-6\">Server-Side Conversions API</h2><p class=\"mb-6\">The solution is simple: bypass the browser completely. By establishing direct server-to-server connection links via Meta Conversions API and Google Tag Manager Server-side, you achieve total conversion accuracy.</p>"
+    },
+    {
+      "id": "3",
+      "title": "The Future of Content: Zero-Touch Production",
+      "slug": "zero-touch-production",
+      "category": "Automation",
+      "readTime": "8 min read",
+      "author": "Vikram Malhotra",
+      "date": "May 10, 2026",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80",
+      "summary": "How generative models and automated LLM workflows are transforming the speed and volume of creative brand storytelling.",
+      "content": "<p class=\"text-xl font-medium leading-relaxed text-on-surface mb-8\">Creative fatigue is the number one cause of campaign decay. Scaling volume manually is prohibitively expensive.</p><h2 class=\"text-3xl font-headline font-bold text-on-surface mt-12 mb-6\">Automated Asset Iterations</h2><p class=\"mb-6\">Using custom script triggers and midjourney APIs, we automate the generation of thousands of ad variations, feeding only the highest-converting models back into the loop.</p>"
+    }
+  ],
+  "submissions": [
+    {
+      "id": "submission-1779277361713",
+      "name": "bvfgh",
+      "phone": "jhgh",
+      "bizType": "E-commerce & Retail",
+      "message": "jhgth",
+      "date": "May 20, 2026",
+      "resolved": false
+    },
+    {
+      "id": "submission-1779214910044",
+      "name": "mukul",
+      "phone": "8812345678898767",
+      "bizType": "Real Estate",
+      "message": "hgfrtyujmnbvcxdsw234567",
+      "date": "May 19, 2026",
+      "resolved": false
+    },
+    {
+      "id": "submission-1779209511353",
+      "name": "Jane Doe Test",
+      "phone": "+1 (555) 123-4567",
+      "bizType": "E-commerce & Retail",
+      "message": "Hello, I am testing the new premium contact form submissions.",
+      "date": "May 19, 2026",
+      "resolved": false
+    },
+    {
+      "id": "submission-1",
+      "name": "Alex Mercer",
+      "phone": "+1 415-555-2671",
+      "bizType": "SaaS & Tech",
+      "message": "Interested in automating our social lead funnel using LLM integrations. We are scaling from $20k to $100k MRR.",
+      "date": "May 19, 2026",
+      "resolved": false
+    }
+  ]
+}

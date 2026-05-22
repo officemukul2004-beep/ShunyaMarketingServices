@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shunya AIOS Engine | Admin Control Center</title>
+
+  <!-- Typography & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+  <!-- Tailwind Script -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#000000',
+            secondary: '#00647a',
+            surface: '#fcfcf9',
+            'on-surface': '#2e2f2d',
+            'surface-container-low': '#f5f5f2',
+            'surface-container-high': '#ecece8',
+            'outline-variant': '#adadaa'
+          },
+          fontFamily: {
+            headline: ['Outfit', 'sans-serif'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Styling adjustments */
+    body {
+      background: radial-gradient(circle at 0% 0%, rgba(0, 0, 0, 0.03) 0%, transparent 50%),
+                  radial-gradient(circle at 100% 100%, rgba(0, 100, 122, 0.03) 0%, transparent 50%),
+                  #fcfcf9;
+    }
+    
+    .glass-card {
+      background: rgba(252, 252, 249, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(173, 173, 170, 0.2);
+    }
+    
+    .active-tab {
+      background: #000000;
+      color: #ffffff;
+      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Custom Scrollbars */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(173, 173, 170, 0.4);
+      border-radius: 9px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+
+<body class="font-body text-on-surface min-h-screen flex flex-col md:flex-row overflow-x-hidden">
+
+  <!-- Sidebar Navigation -->
+  <aside class="w-full md:w-80 glass-card border-r border-outline-variant/15 flex flex-col p-6 space-y-8 z-30">
+    <div class="flex items-center space-x-3">
+      <div class="h-10 w-10 rounded-xl bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-white font-headline font-black text-xl shadow-lg shadow-primary/20">S</div>
+      <div>
+        <h2 class="font-headline font-extrabold text-lg leading-tight">Shunya Engine</h2>
+        <p class="text-[10px] uppercase font-bold tracking-widest text-primary">Admin Control Center</p>
+      </div>
+    </div>
+
+    <!-- Nav list -->
+    <nav class="flex-1 space-y-2">
+      <button onclick="switchTab('dashboard')" id="btn-dashboard" class="w-full flex items-center gap-4 px-4 py-3 rounded-2xl text-sm font-semibold transition-all hover:bg-surface-container-low active-tab">
+        <span class="material-symbols-outlined text-lg">dashboard</span>
+        Dashboard
+      </button>
+      <button onclick="switchTab('seo')" id="btn-seo" class="w-full flex items-center gap-4 px-4 py-3 rounded-2xl text-sm font-semibold text-on-surface/70 transition-all hover:bg-surface-container-low">
+        <span class="material-symbols-outlined text-lg">language</span>
+        SEO Optimization
+      </button>
+      <button onclick="switchTab('blogs')" id="btn-blogs" class="w-full flex items-center gap-4 px-4 py-3 rounded-2xl text-sm font-semibold text-on-surface/70 transition-all hover:bg-surface-container-low">
+        <span class="material-symbols-outlined text-lg">edit_note</span>
+        Blogs & Articles
+      </button>
+      <button onclick="switchTab('forms')" id="btn-forms" class="w-full flex items-center gap-4 px-4 py-3 rounded-2xl text-sm font-semibold text-on-surface/70 transition-all hover:bg-surface-container-low">
+        <span class="material-symbols-outlined text-lg">chat_bubble</span>
+        Form Submissions
+      </button>
+    </nav>
+
+    <!-- Footer info -->
+    <div class="pt-4 border-t border-outline-variant/10 text-xs text-outline-variant flex items-center justify-between">
+      <span>Server Status: <span class="text-green-500 font-bold">Online</span></span>
+      <a href="index.html" class="text-primary hover:underline flex items-center gap-0.5">
+        View Site <span class="material-symbols-outlined text-[10px]">north_east</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Viewport -->
+  <main class="flex-1 p-6 md:p-12 overflow-y-auto max-w-7xl mx-auto w-full">
+
+    <!-- Toast Notification Node -->
+    <div id="admin-toast" class="fixed bottom-8 right-8 z-[100] px-6 py-4 rounded-2xl backdrop-blur-xl border shadow-2xl transition-all duration-500 translate-y-10 opacity-0 pointer-events-none"></div>
+
+    <!-- ================= DASHBOARD TAB ================= -->
+    <section id="tab-dashboard" class="space-y-8">
+      <div>
+        <h1 class="font-headline font-extrabold text-4xl mb-2">Control Dashboard</h1>
+        <p class="text-on-surface-variant font-light">Real-time state metrics of the Shunya content management system.</p>
+      </div>
+
+      <!-- Counter Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card p-8 rounded-3xl shadow-lg relative overflow-hidden group">
+          <div class="absolute -right-8 -top-8 w-24 h-24 bg-primary/10 rounded-full blur-2xl group-hover:scale-125 transition-transform"></div>
+          <p class="text-xs uppercase font-bold tracking-widest text-primary mb-2">Active Blog Posts</p>
+          <h3 id="count-blogs" class="font-headline font-extrabold text-5xl">0</h3>
+        </div>
+        <div class="glass-card p-8 rounded-3xl shadow-lg relative overflow-hidden group">
+          <div class="absolute -right-8 -top-8 w-24 h-24 bg-secondary/10 rounded-full blur-2xl group-hover:scale-125 transition-transform"></div>
+          <p class="text-xs uppercase font-bold tracking-widest text-secondary mb-2">Lead Form Submissions</p>
+          <h3 id="count-forms" class="font-headline font-extrabold text-5xl">0</h3>
+        </div>
+        <div class="glass-card p-8 rounded-3xl shadow-lg relative overflow-hidden group">
+          <div class="absolute -right-8 -top-8 w-24 h-24 bg-green-500/10 rounded-full blur-2xl group-hover:scale-125 transition-transform"></div>
+          <p class="text-xs uppercase font-bold tracking-widest text-green-600 mb-2">SEO Page Configs</p>
+          <h3 id="count-seo" class="font-headline font-extrabold text-5xl">0</h3>
+        </div>
+      </div>
+
+      <!-- Latest Submissions Mini-Table -->
+      <div class="glass-card rounded-3xl p-8 shadow-lg">
+        <h3 class="font-headline font-bold text-xl mb-6">Recent Form Inquiries</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="border-b border-outline-variant/20 text-on-surface/50 font-semibold">
+                <th class="pb-3">Name</th>
+                <th class="pb-3">Business</th>
+                <th class="pb-3">Message</th>
+                <th class="pb-3">Date</th>
+                <th class="pb-3">Status</th>
+              </tr>
+            </thead>
+            <tbody id="mini-submissions-table">
+              <tr>
+                <td colspan="5" class="py-6 text-center text-outline-variant">Loading submissions...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SEO TAB ================= -->
+    <section id="tab-seo" class="hidden space-y-8">
+      <div>
+        <h1 class="font-headline font-extrabold text-4xl mb-2">SEO Optimization</h1>
+        <p class="text-on-surface-variant font-light">Dynamically control search engine metadata headers across all core pages.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- Selector -->
+        <div class="lg:col-span-4 glass-card p-6 rounded-3xl space-y-4 shadow-md">
+          <h3 class="font-headline font-bold text-lg mb-2">Select Target Page</h3>
+          <div class="space-y-1" id="seo-pages-list">
+            <!-- Pages populated dynamically -->
+          </div>
+        </div>
+
+        <!-- Form Editor -->
+        <div class="lg:col-span-8 glass-card p-8 rounded-3xl shadow-lg space-y-6">
+          <h3 class="font-headline font-bold text-xl border-b border-outline-variant/15 pb-4">
+            Edit Page Headers: <span id="current-edit-page" class="text-primary capitalize">Index</span>
+          </h3>
+
+          <form id="seo-edit-form" class="space-y-6">
+            <div class="space-y-2">
+              <label class="text-xs font-bold uppercase tracking-wider text-on-surface/60">Meta Title Tag</label>
+              <input id="seo-title" required class="w-full bg-surface-container-low border border-outline-variant/20 rounded-2xl px-6 py-4 focus:outline-none focus:border-primary transition-all text-sm font-medium" placeholder="E.g. Shunya Marketing | Scaling Startups" type="text" />
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-xs font-bold uppercase tracking-wider text-on-surface/60">Meta Description</label>
+              <textarea id="seo-desc" rows="3" required class="w-full bg-surface-container-low border border-outline-variant/20 rounded-2xl px-6 py-4 focus:outline-none focus:border-primary transition-all text-sm leading-relaxed" placeholder="E.g. We scale your business through custom automation workflows."></textarea>
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-xs font-bold uppercase tracking-wider text-on-surface/60">Meta Keywords</label>
+              <input id="seo-keywords" class="w-full bg-surface-container-low border border-outline-variant/20 rounded-2xl px-6 py-4 focus:outline-none focus:border-primary transition-all text-sm" placeholder="E.g. automation, marketing, saas scale" type="text" />
+            </div>
+
+            <button type="submit" class="w-full bg-primary text-white py-4 rounded-2xl font-headline font-bold hover:opacity-95 transition-all shadow-lg shadow-primary/25">
+              Save SEO Configuration
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BLOGS TAB ================= -->
+    <section id="tab-blogs" class="hidden space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <h1 class="font-headline font-extrabold text-4xl mb-2">Blogs & Articles</h1>
+          <p class="text-on-surface-variant font-light">Publish, update, and manage editorial scaling assets.</p>
+        </div>
+        <button onclick="openBlogModal()" class="bg-gradient-to-r from-primary to-secondary text-white px-8 py-3.5 rounded-full font-headline font-bold text-sm tracking-tight shadow-lg shadow-primary/20 flex items-center gap-2">
+          <span class="material-symbols-outlined text-sm">add</span> Create New Article
+        </button>
+      </div>
+
+      <!-- Blogs List -->
+      <div id="admin-blogs-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- BLOG CRUD MODAL -->
+      <div id="blog-modal" class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="glass-card w-full max-w-3xl rounded-[2rem] shadow-2xl p-8 overflow-y-auto max-h-[90vh] space-y-6">
+          <div class="flex items-center justify-between border-b border-outline-variant/15 pb-4">
+            <h3 id="modal-blog-title" class="font-headline font-extrabold text-2xl">Publish Dynamic Post</h3>
+            <button onclick="closeBlogModal()" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-low hover:bg-surface-container-high transition-colors">
+              <span class="material-symbols-outlined text-lg">close</span>
+            </button>
+          </div>
+
+          <form id="blog-modal-form" class="space-y-5">
+            <input type="hidden" id="edit-blog-id" value="">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-on-surface/60">Article Title</label>
+                <input id="blog-title" required class="w-full bg-surface-container-low border border-outline-variant/20 rounded-2xl px-5 py-3 focus:outline-none focus:border-primary text-sm font-semibold" type="text" placeholder="Title" />
+              </div>
+              <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-on-surface/60">Author Name</label>
+                <input id="blog-author" required class="w-full bg-surface-container-low border border-outline-variant/20 rounded-2xl px-5 py-3 focus:outline-none focus:border-primary text-sm" type="text" placeholder="Author" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-on-surface/60">Category</label>
+                <input id="blog-category" required class="w-full bg-surface-container-low border border-outline-variant/20 rounded-2xl px-5 py-3 focus:outline-none focus:border-primary text-sm" type="text" placeholder="E.g. Strategy, Performance" />
+              </div>
+              <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-on-surface/60">Read Time</label>
+                <input id="blog-readtime" class="w-full bg-surface-container-low border border-outline-variant/20 rounded-2xl px-5 py-3 focus:outline-none focus:border-primary text-sm" type="text" placeholder="E.g. 5 min read" />
+              </div>
+              <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-on-surface/60">Hero Image URL</label>
+                <input id="blog-image" class="w-full bg-surface-container-low border border-outline-variant/20 rounded-2xl px-5 py-3 focus:outline-none focus:border-primary text-sm" type="text" placeholder="Image URL" />
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-xs font-bold uppercase tracking-wider text-on-surface/60">Summary / Excerpt</label>
+              <input id="blog-summary" required class="w-full bg-surface-container-low border border-outline-variant/20 rounded-2xl px-5 py-3 focus:outline-none focus:border-primary text-sm" type="text" placeholder="Short description of the post..." />
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-xs font-bold uppercase tracking-wider text-on-surface/60">Content Body (HTML Format Supported)</label>
+              <textarea id="blog-content" required rows="8" class="w-full bg-surface-container-low border border-outline-variant/20 rounded-2xl px-5 py-3 focus:outline-none focus:border-primary text-sm leading-relaxed" placeholder="Write content..."></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-primary text-white py-4 rounded-2xl font-headline font-bold hover:opacity-95 transition-all shadow-lg shadow-primary/20">
+              Save Article
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FORMS TAB ================= -->
+    <section id="tab-forms" class="hidden space-y-8">
+      <div>
+        <h1 class="font-headline font-extrabold text-4xl mb-2">Form Submissions</h1>
+        <p class="text-on-surface-variant font-light">Manage and review incoming business growth audit inquiries.</p>
+      </div>
+
+      <!-- Submissions Detailed Table -->
+      <div class="glass-card rounded-3xl p-8 shadow-lg">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="border-b border-outline-variant/20 text-on-surface/50 font-semibold">
+                <th class="pb-3">Date</th>
+                <th class="pb-3">Name</th>
+                <th class="pb-3">Contact info</th>
+                <th class="pb-3">Business Category</th>
+                <th class="pb-3">Message</th>
+                <th class="pb-3">Resolution State</th>
+                <th class="pb-3 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="submissions-table-body">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Control panel client script -->
+  <script>
+    // Variables holding fetched server state
+    let seoConfig = [];
+    let blogsList = [];
+    let formSubmissions = [];
+    let activeSEOPage = 'index';
+
+    // Core Tabs Switcher
+    function switchTab(tabId) {
+      const sections = ['dashboard', 'seo', 'blogs', 'forms'];
+      sections.forEach(s => {
+        const el = document.getElementById('tab-' + s);
+        const btn = document.getElementById('btn-' + s);
+        if (s === tabId) {
+          el.classList.remove('hidden');
+          btn.classList.add('active-tab');
+          btn.classList.remove('text-on-surface/70');
+        } else {
+          el.classList.add('hidden');
+          btn.classList.remove('active-tab');
+          btn.classList.add('text-on-surface/70');
+        }
+      });
+      // Load relevant tab data on switch
+      fetchTabStates(tabId);
+    }
+
+    // Dynamic Loader Trigger
+    async function fetchTabStates(tabId) {
+      if (tabId === 'dashboard') {
+        await Promise.all([fetchSEO(), fetchBlogs(), fetchSubmissions()]);
+        renderDashboardStats();
+      } else if (tabId === 'seo') {
+        await fetchSEO();
+        renderSEOPagesSelector();
+        loadPageSEOToForm(activeSEOPage);
+      } else if (tabId === 'blogs') {
+        await fetchBlogs();
+        renderBlogsList();
+      } else if (tabId === 'forms') {
+        await fetchSubmissions();
+        renderSubmissionsTable();
+      }
+    }
+
+    // Helper alerts/toasts
+    function notify(message, type = 'success') {
+      const toast = document.getElementById('admin-toast');
+      toast.className = `fixed bottom-8 right-8 z-[100] px-6 py-4 rounded-2xl backdrop-blur-xl border shadow-2xl transition-all duration-500 translate-y-0 opacity-100 ${
+        type === 'success' ? 'bg-green-500/20 border-green-500/30 text-green-800' : 'bg-red-500/20 border-red-500/30 text-red-800'
+      }`;
+      toast.innerHTML = message;
+      
+      setTimeout(() => {
+        toast.className = 'fixed bottom-8 right-8 z-[100] px-6 py-4 rounded-2xl backdrop-blur-xl border shadow-2xl transition-all duration-500 translate-y-10 opacity-0 pointer-events-none';
+      }, 3500);
+    }
+
+    // --- FETCH API HANDLERS ---
+    async function fetchSEO() {
+      try {
+        const res = await fetch('/api/seo');
+        if (res.ok) seoConfig = await res.json();
+      } catch (e) {
+        console.error('Failed to fetch SEO config:', e);
+      }
+    }
+
+    async function fetchBlogs() {
+      try {
+        const res = await fetch('/api/blogs');
+        if (res.ok) blogsList = await res.json();
+      } catch (e) {
+        console.error('Failed to fetch blogs list:', e);
+      }
+    }
+
+    async function fetchSubmissions() {
+      try {
+        const res = await fetch('/api/submissions');
+        if (res.ok) formSubmissions = await res.json();
+      } catch (e) {
+        console.error('Failed to fetch form submissions:', e);
+      }
+    }
+
+    // --- DASHBOARD RENDER ---
+    function renderDashboardStats() {
+      document.getElementById('count-blogs').textContent = blogsList.length;
+      document.getElementById('count-forms').textContent = formSubmissions.length;
+      document.getElementById('count-seo').textContent = seoConfig.length;
+
+      // Render mini submissions list
+      const tbody = document.getElementById('mini-submissions-table');
+      tbody.innerHTML = '';
+      if (formSubmissions.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5" class="py-6 text-center text-outline-variant">No submissions received.</td></tr>`;
+        return;
+      }
+
+      formSubmissions.slice(0, 3).forEach(s => {
+        const row = document.createElement('tr');
+        row.className = 'border-b border-outline-variant/10 text-on-surface/80 hover:bg-surface-container-low/40';
+        row.innerHTML = `
+          <td class="py-4 font-semibold text-primary">${s.name}</td>
+          <td class="py-4">${s.bizType}</td>
+          <td class="py-4 truncate max-w-[240px]">${s.message}</td>
+          <td class="py-4 text-xs font-medium text-outline-variant">${s.date}</td>
+          <td class="py-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${
+              s.resolved ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-700'
+            }">${s.resolved ? 'Resolved' : 'Pending'}</span>
+          </td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    // --- SEO RENDERING AND FORM ---
+    function renderSEOPagesSelector() {
+      const list = document.getElementById('seo-pages-list');
+      list.innerHTML = '';
+      const corePages = ['index', 'about', 'services', 'portfolio', 'contact', 'blog', 'case-study', 'privacy'];
+      
+      corePages.forEach(p => {
+        const isSelected = p === activeSEOPage;
+        const btn = document.createElement('button');
+        btn.className = `w-full text-left px-4 py-3 rounded-xl text-sm font-semibold capitalize transition-all ${
+          isSelected ? 'bg-primary text-white shadow-md' : 'hover:bg-surface-container-low text-on-surface/80'
+        }`;
+        btn.textContent = p.replace('-', ' ');
+        btn.onclick = () => selectSEOPage(p);
+        list.appendChild(btn);
+      });
+    }
+
+    function selectSEOPage(page) {
+      activeSEOPage = page;
+      renderSEOPagesSelector();
+      loadPageSEOToForm(page);
+    }
+
+    function loadPageSEOToForm(page) {
+      document.getElementById('current-edit-page').textContent = page.replace('-', ' ');
+      const config = seoConfig.find(s => s.page === page) || { title: '', description: '', keywords: '' };
+      document.getElementById('seo-title').value = config.title;
+      document.getElementById('seo-desc').value = config.description;
+      document.getElementById('seo-keywords').value = config.keywords;
+    }
+
+    document.getElementById('seo-edit-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const title = document.getElementById('seo-title').value;
+      const description = document.getElementById('seo-desc').value;
+      const keywords = document.getElementById('seo-keywords').value;
+
+      try {
+        const res = await fetch(`/api/seo/${activeSEOPage}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ title, description, keywords })
+        });
+        if (res.ok) {
+          notify('SEO configurations saved successfully.');
+          fetchSEO();
+        } else {
+          notify('Failed to save SEO config.', 'error');
+        }
+      } catch (err) {
+        notify('Network error updating page headers.', 'error');
+      }
+    });
+
+    // --- BLOGS LIST RENDERING ---
+    function renderBlogsList() {
+      const container = document.getElementById('admin-blogs-list');
+      container.innerHTML = '';
+
+      if (blogsList.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full py-16 text-center glass-card rounded-3xl">
+            <span class="material-symbols-outlined text-5xl text-outline-variant mb-3">post_add</span>
+            <p class="text-on-surface-variant font-light">No published posts found. Publish your first article!</p>
+          </div>`;
+        return;
+      }
+
+      blogsList.forEach(blog => {
+        const card = document.createElement('div');
+        card.className = 'glass-card p-6 rounded-3xl shadow-md space-y-4 relative flex flex-col justify-between';
+        card.innerHTML = `
+          <div class="space-y-4">
+            <div class="aspect-video w-full rounded-2xl overflow-hidden bg-surface-container-low">
+              <img src="${blog.image}" alt="${blog.title}" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-primary">${blog.category}</span>
+              <h4 class="font-headline font-bold text-lg line-clamp-1 mt-1">${blog.title}</h4>
+              <p class="text-xs text-on-surface-variant line-clamp-2 mt-2 leading-relaxed">${blog.summary}</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between border-t border-outline-variant/10 pt-4 mt-4">
+            <span class="text-[10px] font-medium text-outline-variant">${blog.date}</span>
+            <div class="flex items-center gap-2">
+              <button onclick="editBlog('${blog.id}')" class="p-2 bg-surface-container-low hover:bg-primary/10 hover:text-primary rounded-xl transition-colors">
+                <span class="material-symbols-outlined text-sm">edit</span>
+              </button>
+              <button onclick="deleteBlog('${blog.id}')" class="p-2 bg-surface-container-low hover:bg-red-500/10 hover:text-red-500 rounded-xl transition-colors">
+                <span class="material-symbols-outlined text-sm">delete</span>
+              </button>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // Blog Modal Crud Helpers
+    function openBlogModal() {
+      document.getElementById('modal-blog-title').textContent = 'Publish New Post';
+      document.getElementById('blog-modal-form').reset();
+      document.getElementById('edit-blog-id').value = '';
+      document.getElementById('blog-modal').classList.remove('hidden');
+    }
+
+    function closeBlogModal() {
+      document.getElementById('blog-modal').classList.add('hidden');
+    }
+
+    function editBlog(id) {
+      const blog = blogsList.find(b => b.id === id);
+      if (!blog) return;
+
+      document.getElementById('modal-blog-title').textContent = 'Edit Article';
+      document.getElementById('edit-blog-id').value = blog.id;
+      document.getElementById('blog-title').value = blog.title;
+      document.getElementById('blog-author').value = blog.author;
+      document.getElementById('blog-category').value = blog.category;
+      document.getElementById('blog-readtime').value = blog.readTime;
+      document.getElementById('blog-image').value = blog.image;
+      document.getElementById('blog-summary').value = blog.summary;
+      document.getElementById('blog-content').value = blog.content;
+
+      document.getElementById('blog-modal').classList.remove('hidden');
+    }
+
+    document.getElementById('blog-modal-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const id = document.getElementById('edit-blog-id').value;
+      const title = document.getElementById('blog-title').value;
+      const author = document.getElementById('blog-author').value;
+      const category = document.getElementById('blog-category').value;
+      const readTime = document.getElementById('blog-readtime').value;
+      const image = document.getElementById('blog-image').value;
+      const summary = document.getElementById('blog-summary').value;
+      const content = document.getElementById('blog-content').value;
+
+      const payload = { title, author, category, readTime, image, summary, content };
+      const url = id ? `/api/blogs/${id}` : '/api/blogs';
+      const method = id ? 'PUT' : 'POST';
+
+      try {
+        const res = await fetch(url, {
+          method,
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (res.ok) {
+          notify(`Article successfully ${id ? 'updated' : 'published'}.`);
+          closeBlogModal();
+          await fetchBlogs();
+          renderBlogsList();
+        } else {
+          notify('Error saving article.', 'error');
+        }
+      } catch (err) {
+        notify('Network error saving article.', 'error');
+      }
+    });
+
+    async function deleteBlog(id) {
+      if (!confirm('Are you sure you want to delete this blog post?')) return;
+      try {
+        const res = await fetch(`/api/blogs/${id}`, { method: 'DELETE' });
+        if (res.ok) {
+          notify('Article deleted.');
+          await fetchBlogs();
+          renderBlogsList();
+        } else {
+          notify('Error deleting article.', 'error');
+        }
+      } catch (err) {
+        notify('Network error deleting article.', 'error');
+      }
+    }
+
+    // --- SUBMISSIONS TABLE RENDERING ---
+    function renderSubmissionsTable() {
+      const tbody = document.getElementById('submissions-table-body');
+      tbody.innerHTML = '';
+
+      if (formSubmissions.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="7" class="py-16 text-center text-outline-variant font-light">
+              No form responses received yet.
+            </td>
+          </tr>`;
+        return;
+      }
+
+      formSubmissions.forEach(s => {
+        const row = document.createElement('tr');
+        row.className = 'border-b border-outline-variant/10 text-on-surface/80 hover:bg-surface-container-low/40';
+        row.innerHTML = `
+          <td class="py-5 text-xs text-outline-variant font-medium">${s.date}</td>
+          <td class="py-5 font-semibold">${s.name}</td>
+          <td class="py-5 text-xs">
+            <span class="block">${s.phone}</span>
+          </td>
+          <td class="py-5 font-medium text-xs text-secondary">${s.bizType}</td>
+          <td class="py-5 max-w-[280px] break-words text-xs leading-relaxed">${s.message}</td>
+          <td class="py-5">
+            <button onclick="toggleResolveSubmission('${s.id}')" class="px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider transition-colors ${
+              s.resolved ? 'bg-green-100 text-green-700 hover:bg-green-200' : 'bg-orange-100 text-orange-700 hover:bg-orange-200'
+            }">${s.resolved ? 'Resolved' : 'Pending'}</button>
+          </td>
+          <td class="py-5 text-right">
+            <button onclick="deleteSubmission('${s.id}')" class="p-2 bg-surface-container-low hover:bg-red-500/10 hover:text-red-500 rounded-xl transition-colors">
+              <span class="material-symbols-outlined text-sm">delete</span>
+            </button>
+          </td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    async function toggleResolveSubmission(id) {
+      try {
+        const res = await fetch(`/api/submissions/${id}/resolve`, { method: 'POST' });
+        if (res.ok) {
+          notify('Submission state updated.');
+          await fetchSubmissions();
+          renderSubmissionsTable();
+        } else {
+          notify('Error toggling submission state.', 'error');
+        }
+      } catch (err) {
+        notify('Network error.', 'error');
+      }
+    }
+
+    async function deleteSubmission(id) {
+      if (!confirm('Are you sure you want to delete this response record?')) return;
+      try {
+        const res = await fetch(`/api/submissions/${id}`, { method: 'DELETE' });
+        if (res.ok) {
+          notify('Inquiry record deleted.');
+          await fetchSubmissions();
+          renderSubmissionsTable();
+        } else {
+          notify('Error deleting response.', 'error');
+        }
+      } catch (err) {
+        notify('Network error.', 'error');
+      }
+    }
+
+    // Initial Dashboard Render
+    window.onload = () => {
+      fetchTabStates('dashboard');
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Case Study: D2C Fashion Giant | Shunya Marketing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(173, 173, 170, 0.15);
+        }
+        .neon-text-glow {
+            text-shadow: 0 0 20px rgba(106, 28, 246, 0.3);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "surface-variant": "#ddddd8",
+                "surface-container": "#e8e8e4",
+                "on-background": "#2e2f2d",
+                "outline": "#767774",
+                "on-secondary-fixed": "#003a47",
+                "on-primary-fixed-variant": "#350088",
+                "on-secondary": "#e1f6ff",
+                "surface-tint": "#6a1cf6",
+                "on-secondary-fixed-variant": "#00586c",
+                "secondary": "#00647a",
+                "surface-container-high": "#e3e3de",
+                "inverse-surface": "#0d0f0d",
+                "primary-container": "#ac8eff",
+                "on-primary-container": "#2a0070",
+                "error": "#b41340",
+                "surface": "#f7f6f2",
+                "on-surface": "#2e2f2d",
+                "surface-bright": "#f7f6f2",
+                "secondary-dim": "#00576a",
+                "on-tertiary-container": "#520072",
+                "secondary-fixed-dim": "#1cd5ff",
+                "primary-fixed-dim": "#a07dff",
+                "error-container": "#f74b6d",
+                "tertiary-container": "#e092ff",
+                "on-tertiary-fixed": "#2c003f",
+                "outline-variant": "#adadaa",
+                "error-dim": "#a70138",
+                "on-primary": "#f7f0ff",
+                "surface-container-low": "#f1f1ed",
+                "on-surface-variant": "#5b5c59",
+                "tertiary-fixed-dim": "#d97dff",
+                "on-primary-fixed": "#000000",
+                "background": "#f7f6f2",
+                "primary-fixed": "#ac8eff",
+                "on-error-container": "#510017",
+                "tertiary": "#9400ca",
+                "on-secondary-container": "#004e60",
+                "primary-dim": "#5d00e3",
+                "primary": "#6a1cf6",
+                "surface-container-highest": "#ddddd8",
+                "on-tertiary-fixed-variant": "#600084",
+                "tertiary-fixed": "#e092ff",
+                "on-tertiary": "#ffedff",
+                "secondary-container": "#79dfff",
+                "on-error": "#ffefef",
+                "inverse-primary": "#9d79ff",
+                "surface-dim": "#d4d5d0",
+                "tertiary-dim": "#8200b1",
+                "surface-container-lowest": "#ffffff",
+                "secondary-fixed": "#79dfff",
+                "inverse-on-surface": "#9d9d9a"
+              },
+              fontFamily: {
+                "headline": ["Plus Jakarta Sans"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#f7f6f2]/80 dark:bg-zinc-950/80 backdrop-blur-2xl border-b border-[#adadaa]/15 shadow-sm shadow-black/5">
+<div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto font-['Plus_Jakarta_Sans'] tracking-tight">
+<div class="text-2xl font-bold tracking-tighter text-[#2e2f2d] dark:text-zinc-100">
+                Shunya Marketing
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#2e2f2d]/70 dark:text-zinc-400 hover:text-[#6a1cf6] transition-colors" href="#">Home</a>
+<a class="text-[#2e2f2d]/70 dark:text-zinc-400 hover:text-[#6a1cf6] transition-colors" href="#">Services</a>
+<a class="text-[#6a1cf6] font-semibold border-b-2 border-[#6a1cf6] pb-1" href="#">Portfolio</a>
+<a class="text-[#2e2f2d]/70 dark:text-zinc-400 hover:text-[#6a1cf6] transition-colors" href="#">About</a>
+<a class="text-[#2e2f2d]/70 dark:text-zinc-400 hover:text-[#6a1cf6] transition-colors" href="#">Blogs</a>
+<a class="text-[#2e2f2d]/70 dark:text-zinc-400 hover:text-[#6a1cf6] transition-colors" href="#">Contact</a>
+</div>
+<button class="bg-gradient-to-r from-primary to-secondary text-on-primary px-6 py-2.5 rounded-full font-semibold scale-95 active:scale-90 transition-transform shadow-lg shadow-primary/20 hover:opacity-90">
+                Book Strategy Call
+            </button>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative px-8 pt-20 pb-32 overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+<div>
+<span class="inline-block py-1 px-4 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-6 uppercase tracking-widest">Growth Success Story</span>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight text-on-surface leading-[1.1] mb-6">
+                        Scaling a <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">D2C Fashion Giant</span>
+</h1>
+<p class="text-xl text-on-surface-variant mb-10 max-w-lg leading-relaxed">
+                        400% Revenue Jump in 6 Months with Shunya Systems. Humne scale kiya, data-driven methodology se.
+                    </p>
+<div class="flex flex-wrap gap-8">
+<div class="flex flex-col">
+<span class="text-4xl md:text-5xl font-black text-primary neon-text-glow">ROAS 7.2x</span>
+<span class="text-sm font-medium text-outline uppercase tracking-wider mt-1">Consistency over chaos</span>
+</div>
+<div class="flex flex-col">
+<span class="text-4xl md:text-5xl font-black text-secondary">Revenue 52L</span>
+<span class="text-sm font-medium text-outline uppercase tracking-wider mt-1">Monthly Peak</span>
+</div>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-secondary/20 blur-3xl opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+<div class="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl">
+<img class="w-full h-full object-cover transform transition duration-700 hover:scale-105" data-alt="High-fashion editorial shot of a model in vibrant contemporary streetwear, dramatic studio lighting, soft color gradients in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDERa3lOj-tvcf3T0fnQGAgQD4BTlUGUviP0VhFtKRz4M8alNFgRqUffJrU9WaR6Z0dsNrjKQCzedNhUNWf8jYNfXs3w4QXRI6UHFqNJxYVXC9G1eibmGgDPKWqA55oYVkazt-czK9V3Qk31vGl6pEBPsSwNDgzkCihKk8tdF0Rrfd-saIJ6nIIa9UeFpNrWVLk7xt31Mla9X84rqlLigvK_UDbbeiKpPEGdkFch9b4lVTks9vibwESzO7oK93RYqL6dJ1Ul3PgYW0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/60 to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8 glass-card p-6 rounded-2xl">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="trending_up">trending_up</span>
+</div>
+<div>
+<p class="text-sm font-medium text-on-surface/70">Performance Lift</p>
+<p class="text-xl font-bold text-on-surface">+420% YoY Growth</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Challenge -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<div class="glass-card p-8 md:p-12 rounded-[2.5rem] relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-8xl" data-icon="warning">warning</span>
+</div>
+<h2 class="font-headline text-3xl font-bold mb-8">The Challenge: Before Shunya</h2>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-error" data-icon="cancel">cancel</span>
+<div>
+<h4 class="font-bold">High CPA Burn</h4>
+<p class="text-on-surface-variant">Client was burning ₹5L+ monthly on ads with less than 1.5x ROAS.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-error" data-icon="cancel">cancel</span>
+<div>
+<h4 class="font-bold">Stagnant Growth Trap</h4>
+<p class="text-on-surface-variant">Ads scaling attempt was failing. Budget badhate hi ROAS gir jata tha.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-error" data-icon="cancel">cancel</span>
+<div>
+<h4 class="font-bold">Creative Fatigue</h4>
+<p class="text-on-surface-variant">Wohi purane creatives, no scientific testing methodology.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<h3 class="font-headline text-4xl font-extrabold mb-6 leading-tight">Growth was hit by a <span class="text-primary italic">Invisible Ceiling</span>.</h3>
+<p class="text-lg text-on-surface-variant leading-relaxed mb-8">
+                            Managing a D2C brand requires more than just "Running Ads". It requires a system that understands human sentiment and predictive data. Purane methods were no longer working in the post-iOS14 world.
+                        </p>
+<div class="p-6 border-l-4 border-primary bg-primary/5 rounded-r-xl">
+<p class="font-medium italic text-primary">"The brand had great products, but their delivery system for attention was broken. Humne usse rebuild kiya."</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Strategy: 3-Step System -->
+<section class="py-24 bg-surface overflow-hidden">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-20">
+<h2 class="font-headline text-4xl md:text-5xl font-black mb-4">The 3-Step Growth System</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Our proprietary framework that prioritizes systems over manual guesswork.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Step 1 -->
+<div class="bg-surface-container-lowest p-10 rounded-[2rem] border border-outline-variant/10 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 group">
+<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:scale-110 transition-all">
+<span class="material-symbols-outlined text-primary group-hover:text-white text-3xl" data-icon="psychology">psychology</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4">1. Sentiment-Driven Creative</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                            Ads aren't just pixels. We analyze customer psychology to build hooks that stop the scroll. Emotional resonance over generic features.
+                        </p>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-lowest p-10 rounded-[2rem] border border-outline-variant/10 hover:shadow-xl hover:shadow-secondary/5 transition-all duration-500 group">
+<div class="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-secondary group-hover:scale-110 transition-all">
+<span class="material-symbols-outlined text-secondary group-hover:text-white text-3xl" data-icon="query_stats">query_stats</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4">2. Predictive LTV Modeling</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                            Stop chasing one-time buyers. Our AI models predict which customers will return, allowing us to bid higher for high-value leads.
+                        </p>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-lowest p-10 rounded-[2rem] border border-outline-variant/10 hover:shadow-xl hover:shadow-primary-container/5 transition-all duration-500 group">
+<div class="w-16 h-16 bg-tertiary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-tertiary group-hover:scale-110 transition-all">
+<span class="material-symbols-outlined text-tertiary group-hover:text-white text-3xl" data-icon="hub">hub</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4">3. Unified Data Rivers</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                            No silos. Marketing, Inventory, and CS data feed into one 'Archive' to optimize ad spends in real-time based on stock availability.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- The Implementation: The Archive in Action -->
+<section class="py-24 bg-on-background text-surface relative overflow-hidden">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,#6a1cf622_0%,transparent_50%)]"></div>
+<div class="max-w-7xl mx-auto px-8 relative z-10">
+<div class="flex flex-col lg:flex-row gap-20 items-center">
+<div class="lg:w-1/2">
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold mb-8 leading-tight">The Archive in Action: <br/><span class="text-primary-fixed">Technical Excellence</span></h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 border border-primary-fixed/30 rounded-full flex items-center justify-center text-primary-fixed">01</div>
+<div>
+<h4 class="text-xl font-bold mb-2">Automated Funnel Optimization</h4>
+<p class="text-surface/70">Custom Python scripts running 24/7 to adjust bids based on hourly conversion probability. No manual error.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 border border-primary-fixed/30 rounded-full flex items-center justify-center text-primary-fixed">02</div>
+<div>
+<h4 class="text-xl font-bold mb-2">Creative Testing At Scale</h4>
+<p class="text-surface/70">Processed over 240+ creative iterations in 90 days. Systems identified the winning 'hooks' by Day 12.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 border border-primary-fixed/30 rounded-full flex items-center justify-center text-primary-fixed">03</div>
+<div>
+<h4 class="text-xl font-bold mb-2">Tech-Stack Overhaul</h4>
+<p class="text-surface/70">Optimized Shopify server-side tracking (GTM) to recover 30% of lost attribution data from iOS users.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2 w-full">
+<div class="relative bg-zinc-900 rounded-[2.5rem] p-1 border border-white/5 overflow-hidden shadow-2xl">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10"></div>
+<img class="rounded-[2.4rem] opacity-80 mix-blend-screen" data-alt="Digital marketing dashboard with futuristic data visualizations, flowing glowing lines representing data streams, sleek dark interface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE2H9dKbRIf1jLJoe-m5BklPcHA-JqOYbfVZFYE76Art1EEogLtUUKI4u9pybG7ueVB-xeiTdGzg2G_Fd8rra53shP5jJzqkB_Ha_BFhVTz5sttUZQtf7Dhc6wmDWAmgy2SmwPDqA-LQJ0idXH30SBf0yXJxbOeTL-0ctDPDOt3FFsMtZ1MnHfZ2euHVqIA-F2zD9tHd8qcfLfHgh0HakWF_M1pVPZdyVBkvJ8h4rWZUwLu5jqHnc2wxeSp6RAkNlrTcXExb_Q6wo"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Results Section -->
+<section class="py-32 bg-surface relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 text-center">
+<h2 class="font-headline text-5xl md:text-6xl font-black mb-20">The Impact</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="p-12 rounded-[3rem] bg-white shadow-sm border border-outline-variant/10 relative group">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary px-6 py-2 rounded-full text-white text-sm font-bold shadow-lg shadow-primary/30">SCALE</div>
+<div class="text-6xl font-black text-primary mb-4 tabular-nums">7.2x</div>
+<p class="text-on-surface font-bold text-xl mb-2">Average ROAS</p>
+<p class="text-on-surface-variant">Pehle 1.5x par atka tha brand. Ab scalable and profitable.</p>
+</div>
+<div class="p-12 rounded-[3rem] bg-white shadow-sm border border-outline-variant/10 relative group">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-secondary px-6 py-2 rounded-full text-white text-sm font-bold shadow-lg shadow-secondary/30">REVENUE</div>
+<div class="text-6xl font-black text-secondary mb-4 tabular-nums">52L+</div>
+<p class="text-on-surface font-bold text-xl mb-2">Monthly Peak Revenue</p>
+<p class="text-on-surface-variant">400% increment within the first 180 days of implementation.</p>
+</div>
+<div class="p-12 rounded-[3rem] bg-white shadow-sm border border-outline-variant/10 relative group">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-on-background px-6 py-2 rounded-full text-white text-sm font-bold shadow-lg shadow-black/20">QUALITY</div>
+<div class="text-6xl font-black text-on-background mb-4 tabular-nums">92%</div>
+<p class="text-on-surface font-bold text-xl mb-2">Lead Quality Score</p>
+<p class="text-on-surface-variant">Reduction in RTO (Return to Origin) due to better customer targeting.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonial -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-4xl mx-auto px-8 text-center">
+<div class="mb-12">
+<img class="w-24 h-24 rounded-full mx-auto object-cover border-4 border-white shadow-xl" data-alt="Close-up portrait of a professional male fashion entrepreneur, smiling confidently, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxJuiYiN-nuzjetXeVh1mX9RNWNjzp8b54KfOVCv_2NHPKRuzkYP6kvmj9ozPeQCVE92zV_MIKuP17AHq9T9QWqIUe6G0l_jDj2qKKaDSoj-7IoVN3xvji0nMWzF-OmFerinK9Li9tPl86CqAFuRykunhxyduK924RXVlEULD_BGmw909nTJYghcUwkA5rnsxSTIUsR6SHZaEwDTdbNgE9SIa9P0FbJurqIjwtFywkDw6NzR1e61PhleOCGNQThl9alZoH6cGP67U"/>
+</div>
+<blockquote class="text-3xl md:text-4xl font-headline font-bold leading-tight mb-10 text-on-surface">
+                    "Shunya isn't just another agency, they're our <span class="text-primary">growth partners</span>. Their systems-first approach changed how we think about marketing completely."
+                </blockquote>
+<div>
+<p class="font-bold text-xl">Founder &amp; CEO</p>
+<p class="text-on-surface-variant uppercase tracking-widest text-sm">Premier D2C Fashion Label</p>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 px-8">
+<div class="max-w-6xl mx-auto bg-on-background rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_bottom_right,#6a1cf644_0%,transparent_40%)]"></div>
+<div class="relative z-10">
+<h2 class="font-headline text-4xl md:text-6xl font-black text-surface mb-8">Ready to Scale?</h2>
+<p class="text-xl text-surface/80 mb-12 max-w-2xl mx-auto">
+                        Stop burning cash. Let's install the Shunya Systems in your business. High ROAS is a byproduct of high-performance systems.
+                    </p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<button class="bg-primary text-on-primary text-lg font-bold px-10 py-5 rounded-full hover:scale-105 active:scale-95 transition-all shadow-xl shadow-primary/30">
+                            Book Your Audit
+                        </button>
+<button class="bg-transparent border border-surface/20 text-surface text-lg font-bold px-10 py-5 rounded-full hover:bg-surface/10 transition-all">
+                            View More Results
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[2.5rem] mt-20 bg-[#f1f1ed] dark:bg-zinc-900">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 max-w-7xl mx-auto font-['Inter'] text-sm leading-relaxed">
+<div class="col-span-1 md:col-span-1">
+<div class="text-xl font-black text-[#2e2f2d] dark:text-zinc-100 mb-6">
+                    Shunya Marketing
+                </div>
+<p class="text-[#2e2f2d]/60 dark:text-zinc-500 mb-6">
+                    Engineering high-performance digital growth through systems, data, and human sentiment.
+                </p>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6 uppercase tracking-wider">Services</h4>
+<ul class="space-y-4 text-[#2e2f2d]/60 dark:text-zinc-500">
+<li><a class="hover:text-[#6a1cf6] underline-offset-4 hover:underline transition-all" href="#">Performance Marketing</a></li>
+<li><a class="hover:text-[#6a1cf6] underline-offset-4 hover:underline transition-all" href="#">Creative Strategy</a></li>
+<li><a class="hover:text-[#6a1cf6] underline-offset-4 hover:underline transition-all" href="#">CRO &amp; Funnels</a></li>
+<li><a class="hover:text-[#6a1cf6] underline-offset-4 hover:underline transition-all" href="#">Data Analytics</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6 uppercase tracking-wider">Company</h4>
+<ul class="space-y-4 text-[#2e2f2d]/60 dark:text-zinc-500">
+<li><a class="hover:text-[#6a1cf6] underline-offset-4 hover:underline transition-all" href="#">About Us</a></li>
+<li><a class="hover:text-[#6a1cf6] underline-offset-4 hover:underline transition-all" href="#">Portfolio</a></li>
+<li><a class="hover:text-[#6a1cf6] underline-offset-4 hover:underline transition-all" href="#">Contact</a></li>
+<li><a class="hover:text-[#6a1cf6] underline-offset-4 hover:underline transition-all" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6 uppercase tracking-wider">Legal &amp; Social</h4>
+<ul class="space-y-4 text-[#2e2f2d]/60 dark:text-zinc-500">
+<li><a class="hover:text-[#6a1cf6] underline-offset-4 hover:underline transition-all" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-[#6a1cf6] underline-offset-4 hover:underline transition-all" href="#">Terms of Service</a></li>
+<li><a class="hover:text-[#6a1cf6] underline-offset-4 hover:underline transition-all" href="#">LinkedIn</a></li>
+<li><a class="hover:text-[#6a1cf6] underline-offset-4 hover:underline transition-all" href="#">Instagram</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-12 py-8 border-t border-outline-variant/10 text-center md:text-left">
+<p class="text-[#2e2f2d]/60 dark:text-zinc-500">© 2024 Shunya Marketing Services. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

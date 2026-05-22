@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact | Shunya Marketing Services</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#e8e8e4",
+              "inverse-surface": "#0d0f0d",
+              "error-dim": "#a70138",
+              "on-surface-variant": "#5b5c59",
+              "primary-container": "#ac8eff",
+              "on-tertiary": "#ffedff",
+              "tertiary-fixed-dim": "#d97dff",
+              "secondary-dim": "#00576a",
+              "surface-dim": "#d4d5d0",
+              "on-surface": "#2e2f2d",
+              "tertiary-container": "#e092ff",
+              "tertiary-dim": "#8200b1",
+              "on-tertiary-fixed-variant": "#600084",
+              "surface-tint": "#6a1cf6",
+              "primary-fixed": "#ac8eff",
+              "tertiary": "#9400ca",
+              "primary-fixed-dim": "#a07dff",
+              "on-primary": "#f7f0ff",
+              "secondary-fixed": "#79dfff",
+              "on-tertiary-fixed": "#2c003f",
+              "surface-variant": "#ddddd8",
+              "on-secondary-fixed": "#003a47",
+              "surface": "#f7f6f2",
+              "outline": "#767774",
+              "surface-container-high": "#e3e3de",
+              "surface-bright": "#f7f6f2",
+              "error": "#b41340",
+              "outline-variant": "#adadaa",
+              "secondary-container": "#79dfff",
+              "on-secondary-fixed-variant": "#00586c",
+              "surface-container-low": "#f1f1ed",
+              "inverse-primary": "#9d79ff",
+              "primary-dim": "#5d00e3",
+              "on-primary-fixed-variant": "#350088",
+              "secondary": "#00647a",
+              "surface-container-lowest": "#ffffff",
+              "on-background": "#2e2f2d",
+              "primary": "#6a1cf6",
+              "on-primary-fixed": "#000000",
+              "on-error": "#ffefef",
+              "inverse-on-surface": "#9d9d9a",
+              "secondary-fixed-dim": "#1cd5ff",
+              "surface-container-highest": "#ddddd8",
+              "error-container": "#f74b6d",
+              "on-secondary": "#e1f6ff",
+              "on-primary-container": "#2a0070",
+              "on-error-container": "#510017",
+              "on-tertiary-container": "#520072",
+              "tertiary-fixed": "#e092ff",
+              "on-secondary-container": "#004e60",
+              "background": "#f7f6f2"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+      }
+      .neon-glow-purple {
+        box-shadow: 0 0 40px -10px rgba(106, 28, 246, 0.2);
+      }
+      .neon-glow-cyan {
+        box-shadow: 0 0 40px -10px rgba(0, 100, 122, 0.2);
+      }
+      .floating {
+        animation: floating 6s ease-in-out infinite;
+      }
+      @keyframes floating {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-2xl border-b border-[#adadaa]/15 shadow-[0_20px_40px_-10px_rgba(46,47,45,0.05)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#2e2f2d]">
+                Shunya Marketing Services
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-['Plus_Jakarta_Sans'] font-bold tracking-tight text-sm uppercase text-[#2e2f2d]/70 hover:text-[#6a1cf6] transition-colors duration-300" href="#">Home</a>
+<a class="font-['Plus_Jakarta_Sans'] font-bold tracking-tight text-sm uppercase text-[#2e2f2d]/70 hover:text-[#6a1cf6] transition-colors duration-300" href="#">Services</a>
+<a class="font-['Plus_Jakarta_Sans'] font-bold tracking-tight text-sm uppercase text-[#2e2f2d]/70 hover:text-[#6a1cf6] transition-colors duration-300" href="#">Portfolio</a>
+<a class="font-['Plus_Jakarta_Sans'] font-bold tracking-tight text-sm uppercase text-[#2e2f2d]/70 hover:text-[#6a1cf6] transition-colors duration-300" href="#">About</a>
+<a class="font-['Plus_Jakarta_Sans'] font-bold tracking-tight text-sm uppercase text-[#6a1cf6] border-b-2 border-[#6a1cf6] pb-1" href="#">Contact</a>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-dim text-on-primary px-6 py-2.5 rounded-full font-headline font-bold text-sm scale-95 active:scale-90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20">
+                Book Strategy Call
+            </button>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-6 max-w-7xl mx-auto relative overflow-hidden">
+<!-- Abstract Background Orbs -->
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute top-1/2 -right-24 w-80 h-80 bg-secondary/10 rounded-full blur-[100px] pointer-events-none"></div>
+<!-- Scarcity Badge -->
+<div class="flex justify-center mb-12">
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-error-container/10 border border-error-container/20 rounded-full floating">
+<span class="material-symbols-outlined text-error text-sm" data-icon="priority_high">priority_high</span>
+<span class="text-xs font-bold tracking-widest uppercase text-error">Only taking 3 more clients this month</span>
+</div>
+</div>
+<!-- Hero Title Section -->
+<div class="text-center mb-20 max-w-3xl mx-auto">
+<h1 class="font-headline font-extrabold text-5xl md:text-7xl tracking-tighter text-on-surface leading-[0.9] mb-6">
+                Let’s Scale Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Business</span>
+</h1>
+<p class="text-on-surface-variant text-lg md:text-xl font-light">
+                Ready to dominate your niche? Fill out the form below or reach out directly via WhatsApp for an immediate response.
+            </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left Column: Form & Contact -->
+<div class="lg:col-span-7 space-y-8">
+<!-- Lead Capture Form (Glassmorphism) -->
+<div class="glass-card border border-outline-variant/15 p-8 md:p-12 rounded-[2rem] shadow-2xl relative">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-8xl" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<form action="#" class="space-y-6 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface/60 ml-1">Full Name</label>
+<input class="w-full bg-surface-container-low border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/50 transition-all duration-300 placeholder:text-on-surface/30" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface/60 ml-1">Phone Number</label>
+<input class="w-full bg-surface-container-low border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/50 transition-all duration-300 placeholder:text-on-surface/30" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface/60 ml-1">Business Type</label>
+<select class="w-full bg-surface-container-low border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/50 transition-all duration-300 text-on-surface/70">
+<option>E-commerce &amp; Retail</option>
+<option>SaaS &amp; Tech</option>
+<option>Real Estate</option>
+<option>Professional Services</option>
+<option>Other</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface/60 ml-1">How can we help?</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/50 transition-all duration-300 placeholder:text-on-surface/30" placeholder="Tell us about your growth goals..." rows="4"></textarea>
+</div>
+<button class="w-full group relative overflow-hidden bg-on-surface text-surface py-5 rounded-2xl font-headline font-bold text-lg transition-all duration-500 hover:bg-primary hover:shadow-2xl hover:shadow-primary/40 active:scale-95" type="submit">
+<span class="relative z-10 flex items-center justify-center gap-3">
+                                Send Message
+                                <span class="material-symbols-outlined transition-transform duration-300 group-hover:translate-x-2" data-icon="arrow_forward">arrow_forward</span>
+</span>
+</button>
+</form>
+</div>
+<!-- Contact Quick Info -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="p-8 bg-surface-container-low rounded-[2rem] flex items-center gap-5 group hover:bg-white transition-all duration-300">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface/40 uppercase tracking-widest">Email Us</p>
+<p class="font-headline font-bold text-on-surface">growth@shunya.agency</p>
+</div>
+</div>
+<div class="p-8 bg-surface-container-low rounded-[2rem] flex items-center gap-5 group hover:bg-white transition-all duration-300">
+<div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface/40 uppercase tracking-widest">Call Us</p>
+<p class="font-headline font-bold text-on-surface">+1 800-SHUNYA-01</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Visuals & WhatsApp -->
+<div class="lg:col-span-5 space-y-8">
+<!-- WhatsApp Integration -->
+<a class="block p-8 bg-gradient-to-br from-[#25D366] to-[#128C7E] text-white rounded-[2rem] shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group" href="https://wa.me/yournumber" target="_blank">
+<div class="flex items-start justify-between">
+<div class="space-y-4">
+<div class="bg-white/20 w-fit px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Instant Chat</div>
+<h3 class="font-headline font-extrabold text-3xl leading-tight">Chat on WhatsApp</h3>
+<p class="text-white/80 font-medium max-w-[200px]">Get a response from our strategy team in under 5 minutes.</p>
+</div>
+<div class="bg-white p-4 rounded-2xl text-[#128C7E] group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-4xl" data-icon="chat_bubble" data-weight="fill">chat_bubble</span>
+</div>
+</div>
+</a>
+<!-- Map Placeholder -->
+<div class="relative group h-[400px] overflow-hidden rounded-[2rem] bg-surface-container shadow-inner border border-outline-variant/10">
+<div class="absolute inset-0 grayscale contrast-125 opacity-40 mix-blend-multiply transition-all duration-700 group-hover:opacity-60 group-hover:scale-105" data-alt="Monochrome detailed city map overview of New York Manhattan grid with river edges and streets" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuATViTW3D1Z3cmm26E8DRNsCOnDmjr345NT5QnkUj44mIMir_5BCkobHWpdMT1BOU4kJ5_tt-dwgRqEGfRvUB6SzI87Sx9tdjvD9l_jdcpqNEfyDTK00v4YL7LBJSM8kACHnL3st66RJ8b2b-mn9xlfqp2DwgS0a4IUpUujeNmL06PgWtH8bFR0DUJOCz-a3J3oxxammmv0xf3FwvJQgNDjSWA8fU_sdkOUNQbIiVUeJlFkAA4nrbJwin04_Lfu1wrcAm_KaGNYEHs'); background-size: cover; background-position: center;">
+</div>
+<!-- Map Pin -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2">
+<div class="w-12 h-12 bg-primary rounded-full border-4 border-white shadow-xl flex items-center justify-center text-white floating">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</div>
+<div class="bg-white px-4 py-2 rounded-full shadow-lg border border-outline-variant/10">
+<span class="text-xs font-bold text-on-surface">Shunya HQ, NYC</span>
+</div>
+</div>
+<!-- Map Actions -->
+<div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+<span class="bg-white/90 backdrop-blur px-4 py-2 rounded-xl text-[10px] font-bold text-on-surface uppercase tracking-widest shadow-sm">Global Operations</span>
+<div class="flex gap-2">
+<button class="w-10 h-10 bg-white shadow-md rounded-xl flex items-center justify-center text-on-surface hover:bg-primary hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+<button class="w-10 h-10 bg-white shadow-md rounded-xl flex items-center justify-center text-on-surface hover:bg-primary hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-sm" data-icon="remove">remove</span>
+</button>
+</div>
+</div>
+<div class="hidden" data-location="New York City" style=""></div>
+</div>
+<!-- Testimonial / Social Proof Mini -->
+<div class="p-8 bg-surface-container-highest/30 rounded-[2rem] border border-outline-variant/10">
+<div class="flex gap-1 mb-4">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
+</div>
+<p class="text-sm font-medium italic text-on-surface/80 leading-relaxed">
+                        "The Shunya team scaled our monthly recurring revenue by 140% in just 4 months. Their data-driven approach is unlike any agency we've worked with."
+                    </p>
+<div class="mt-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden">
+<img alt="Client Headshot" data-alt="Portrait of a successful male entrepreneur in professional attire, studio lighting, confident smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR5ORkteVai8CJVYoOm_5OyTjpDR1sAv8rzaZSHoBDBOvUKUQJRkhxLwIwZkR9EVp7Nstytmofzh8sKNRNqL8371Yp2g_PL4f4oKc9jF8OJLh9h4NYnz03uizPvXZh3_TZ3d9RVvyyvl-DpaQ-99Z-h-vMjF1k5NYSPzE59PtAYorQAahtve8GiREOOMR-NVcU6qVLMzSYCTEHqWHSY6-etzx7mRsTN98sK3fU2zyLo-mOlJX25KbX2EBnOz1MG1tXX_wEqaLy_Uc"/>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface">Marcus Chen</p>
+<p class="text-[10px] text-on-surface/50 font-bold uppercase tracking-widest">CEO, Zenith Tech</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#adadaa]/10 bg-[#f1f1ed] mt-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-screen-2xl mx-auto">
+<div class="md:col-span-1">
+<div class="text-xl font-bold text-[#2e2f2d] mb-6">Shunya Marketing Services</div>
+<p class="text-sm text-[#2e2f2d]/60 leading-relaxed font-['Inter']">
+                    High-performance editorial digital experiences that bridge the gap between data and creativity.
+                </p>
+</div>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest mb-6 text-primary">Quick Links</h4>
+<ul class="space-y-4 font-['Inter'] text-sm">
+<li><a class="text-[#2e2f2d]/60 hover:text-[#2e2f2d] transition-transform duration-200 hover:translate-x-1 block" href="#">Services</a></li>
+<li><a class="text-[#2e2f2d]/60 hover:text-[#2e2f2d] transition-transform duration-200 hover:translate-x-1 block" href="#">Portfolio</a></li>
+<li><a class="text-[#6a1cf6] font-semibold" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest mb-6 text-primary">Legal</h4>
+<ul class="space-y-4 font-['Inter'] text-sm">
+<li><a class="text-[#2e2f2d]/60 hover:text-[#2e2f2d] transition-transform duration-200 hover:translate-x-1 block" href="#">Privacy Policy</a></li>
+<li><a class="text-[#2e2f2d]/60 hover:text-[#2e2f2d] transition-transform duration-200 hover:translate-x-1 block" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest mb-6 text-primary">Global Offices</h4>
+<p class="text-sm text-[#2e2f2d]/60 leading-relaxed mb-4">
+                    New York • London • Dubai • Singapore
+                </p>
+<div class="flex gap-4">
+<div class="w-8 h-8 bg-[#2e2f2d]/5 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-lg" data-icon="public">public</span>
+</div>
+<div class="w-8 h-8 bg-[#2e2f2d]/5 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-lg" data-icon="language">language</span>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-screen-2xl mx-auto px-12 py-8 border-t border-[#adadaa]/5 text-center text-xs font-['Inter'] text-[#2e2f2d]/40">
+            © 2024 Shunya Marketing Services. All rights reserved.
+        </div>
+</footer>
+<!-- Floating Sticky Button (Mobile) -->
+<div class="fixed bottom-8 right-8 z-[60] md:hidden">
+<button class="bg-primary text-white p-5 rounded-full shadow-2xl shadow-primary/40 flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+</button>
+</div>
+</body></html>
