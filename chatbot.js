@@ -286,71 +286,119 @@ document.addEventListener("DOMContentLoaded", () => {
   // 7. Advanced Offline Mock Engine (Simulates Gemini's style and reasoning)
   const getOfflineBotResponse = (userInput) => {
     const text = userInput.toLowerCase();
-    
-    // Greeting
-    if (text.match(/\b(hi|hello|hey|hola|greetings|pranam|namaste|kya haal hai|kya chal raha hai)\b/)) {
-      return "Hello! Main bilkul fine hoon. Aap bataiye, aapke B2B business scaling targets kya hain? Hum ad campaign optimization, web speed, aur custom automation ke through digital operations boost karte hain. 🚀";
+    // Simple language detection based on keywords/common greetings
+    const langMap = {
+      hi: /\b(hi|hello|hey|hola|greetings|pranam|namaste|kya haal hai|kya chal raha hai)\b|\b(दिखाइ|हैलो|नमस्ते)\b/,
+      mr: /\b(namaskar|kase aahat|namaste)\b|\b(नमस्कार|कसे आहात)\b/, // Marathi
+      ta: /\b(vanakkam|வணக்கம்)\b/, // Tamil
+      bn: /\b(halo|হ্যালো|নমস্কার)\b/, // Bengali
+      te: /\b(namaskaram|నమస్కారం)\b/, // Telugu
+      gu: /\b(namaste|નમસ્તે)\b/ // Gujarati
+    };
+    let detectedLang = "en"; // default English
+    for (const [lang, regex] of Object.entries(langMap)) {
+      if (regex.test(text)) { detectedLang = lang; break; }
     }
-
-    // Ads and Marketing
-    if (text.includes("ad") || text.includes("roas") || text.includes("marketing") || text.includes("facebook") || text.includes("instagram") || text.includes("meta") || text.includes("google")) {
-      return "Paid Ads scaling humari core strength hai. Hum <b>Meta Ads, Google Search/YouTube Ads</b>, aur targeted <b>LinkedIn Ads</b> deploy karte hain.<br><br>• We construct high-converting creative hooks.<br>• We optimize conversion pathways.<br>• Our average active client ad accounts see a <b>4.5x - 5.2x ROAS</b> bump.<br><br>Would you like us to run a free audit of your current ad account?";
-    }
-
-    // AI & Automations
-    if (text.includes("ai") || text.includes("automation") || text.includes("bot") || text.includes("chat") || text.includes("flow") || text.includes("crm")) {
-      return "AI automations operate 24/7 to scale workflows without increasing payroll. Hum log:<br><br>• Custom AI client-onboarding bots design karte hain.<br>• Auto-replies set up karte hain WhatsApp, Email aur Socials par.<br>• Leads information seedhe CRM/Slack me feed karte hain automatically.<br><br>Operational workloads down by nearly <b>70%</b> and response delays are minimized. 🤖";
-    }
-
-    // Web experience / dev
-    if (text.includes("web") || text.includes("tech") || text.includes("shopify") || text.includes("development") || text.includes("design") || text.includes("site") || text.includes("code") || text.includes("coding")) {
-      return "Website experience hi final conversion point hai. Hum custom <b>Next.js, React, TailwindCSS, Shopify</b>, aur headless systems architecture me specializing hain.<br><br>Aapki site visually premium look degi, extremely responsive rahegi, aur page speed <b>95+ on Lighthouse</b> touch karegi. 💻";
-    }
-
-    // Booking a strategy call
-    if (text.includes("book") || text.includes("call") || text.includes("strategy") || text.includes("schedule") || text.includes("contact") || text.includes("milna") || text.includes("appointment")) {
-      return "Zaroor! Let's build a customized scaling roadmap. Hum 15-minute ka absolute free audit calls perform karte hain. Strategy session book karne ke liye:<br><br>1. Directly fill our <a href='contact.html' class='text-primary underline font-bold'>Strategy Form</a>.<br>2. Click the floating WhatsApp button to chat instantly. 📞";
-    }
-
-    // Case studies/Portfolio
-    if (text.includes("case") || text.includes("study") || text.includes("portfolio") || text.includes("result") || text.includes("success") || text.includes("client") || text.includes("work")) {
-      return "Humne NeoBank, swiftRide, aur Velvet Bloom jaise industry leaders ke campaigns architecture set up kiye hain:<br><br>• <b>NeoBank</b>: Scaled 400% in 6 months.<br>• <b>Velvet Bloom</b>: 2.5x e-commerce revenue growth.<br>• <b>SwiftRide</b>: CPA decreased by 40%.<br><br>Detailed case reports padhne ke liye aap <a href='portfolio.html' class='text-primary underline font-bold'>Portfolio page</a> explore kijiye!";
-    }
-
-    // Default fallback
-    return "Bilkul sahi! Shunya me hum absolute data tracking aur design clarity follow karte hain. Paid ads boost, speed optimization, and custom client flows setup are all part of our core services.<br><br>Let's book a growth audit call to trace scaling blockages. Check out our <a href='contact.html' class='text-primary underline font-bold'>Booking Portal</a>.";
-  };
-
-  // 8. Live Gemini API Connection (using client-side dynamic ESM script import)
-  const callLiveGemini = async (apiKey, userText) => {
-    try {
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
-      
-      // Format chat history for the API
-      const formattedContents = chatHistory.slice(-8).map(msg => ({
-        role: msg.sender === "user" ? "user" : "model",
-        parts: [{ text: msg.text }]
-      }));
-
-      const requestBody = {
-        contents: formattedContents,
-        systemInstruction: {
-          parts: [{
-            text: "You are the Shunya Gemini Bot, an intelligent AI growth assistant representing Shunya Marketing Services (a premium B2B growth agency specializing in Paid Ads, AI Automations, and Web/SaaS Development). Respond in professional, engaging Hinglish (Hindi + English) or English. Keep responses relatively short, conversational, and direct the user to click the booking links (contact.html) or WhatsApp link when relevant. Use simple HTML formatting tags like <b> or <li> for formatting text. Avoid using raw markdown blocks like ```."
-          }]
+    // Helper to translate a generic English response into the detected language (very basic substitution)
+    const translate = (enMsg) => {
+      const translations = {
+        hi: {
+          greeting: "Hello! Main bilkul fine hoon. Aap bataiye, aapke B2B business scaling targets kya hain? Hum ad campaign optimization, web speed, aur custom automation ke through digital operations boost karte hain. 🚀",
+          ads: "Paid Ads scaling humari core strength hai. Hum <b>Meta Ads, Google Search/YouTube Ads</b>, aur targeted <b>LinkedIn Ads</b> deploy karte hain.\n\n• High-converting creative hooks.\n• Optimized conversion pathways.\n• Average client ROAS bump 4.5x‑5.2x.\n\nKya aap free audit chahte hain?",
+          ai: "AI automation 24/7 scale workflows bina payroll badhaye. Hum log:\n\n• Custom AI onboarding bots.\n• Auto-replies for WhatsApp, Email, Socials.\n• Leads feed directly to CRM/Slack.\n\nOperational workload down 70% and response delays minimized. 🤖",
+          web: "Website experience hi final conversion point hai. Hum custom <b>Next.js, React, TailwindCSS, Shopify</b>, aur headless architecture me specialize karte hain.\n\nSite premium look, extremely responsive, page speed 95+ on Lighthouse.",
+          call: "Zaroor! 15‑minute free audit call ke liye direct strategy form ya WhatsApp button use karein.",
+          case: "Humne NeoBank, swiftRide, Velvet Bloom jaise leaders ke campaigns set up kiye hain:\n\n• NeoBank: 400% growth in 6 months.\n• Velvet Bloom: 2.5x e‑commerce revenue.\n• SwiftRide: CPA 40% down.\n\nDetails ke liye Portfolio page dekhe.",
+          fallback: "Bilkul sahi! Shunya me hum data tracking, ad boost, speed optimization, aur custom client flows setup karte hain. Strategy audit book karein."
         },
-        generationConfig: {
-          temperature: 0.7,
-          maxOutputTokens: 300
+        mr: {
+          greeting: "नमस्कार! मी ठीक आहे. तुमचे B2B व्यवसाय वाढीचे लक्ष्य काय आहेत? आम्ही अॅड कॅम्पेन ऑप्टिमायझेशन, वेब स्पीड, आणि कस्टम ऑटोमेशन द्वारे डिजिटल ऑपरेशन्स वाढवतो.",
+          ads: "Paid Ads स्केलिंग आमची मुख्य ताकद आहे. आम्ही Meta Ads, Google Search/YouTube Ads, आणि लक्ष्यित LinkedIn Ads चालवतो.",
+          ai: "AI ऑटोमेशन 24/7 वर्कफ्लो स्केल करतो, पेरोल वाढवता नाही.",
+          web: "वेबसाइट अनुभवच अंतिम रूपांतरण पॉइंट आहे. आम्ही Next.js, React, TailwindCSS, Shopify मध्ये विशेषज्ञ आहोत.",
+          call: "नक्की! 15‑minute मोफत ऑडिट कॉलसाठी फॉर्म भरून किंवा व्हॉट्सअॅप बटण वापरून बुक करा.",
+          case: "आम्ही NeoBank, swiftRide इत्यादींसाठी कॅम्पेन सेट अप केले आहेत.",
+          fallback: "होय! डेटा ट्रॅकिंग, अॅड बूस्ट, स्पीड ऑप्टिमायझेशन इत्यादी आमचे कोर सर्विसेस आहेत."
+        },
+        ta: {
+          greeting: "வணக்கம்! நான் நன்றாக இருக்கிறேன். உங்கள் B2B வணிக வளர்ச்சி இலக்குகள் என்ன? நாங்கள் Ads, web speed, AI automation மூலம் டிஜிட்டல் செயல்பாடுகளை மேம்படுத்துகிறோம்.",
+          ads: "Paid Ads ஆனது எங்கள் முக்கிய பலம். நாம் Meta Ads, Google Ads, LinkedIn Ads ஆகியவற்றை பயன்படுத்துகிறோம்.",
+          ai: "AI automation 24/7 வேலைப்போக்குகளை அளிக்கிறது, பணியாளர் செலவுகள் குறைகிறது.",
+          web: "வலைத்தளம் பயனர் அனுபவம் முக்கியம். நாம் Next.js, React, TailwindCSS ஆகியவற்றில் நிபுணர்கள்.",
+          call: "ஆம்! 15‑minute இலவச ஆலோசனை அழைப்பை பதிவு செய்யவும்.",
+          case: "NeoBank, swiftRide போன்ற நிறுவனங்களுக்கு காம்பெயின்கள் அமைத்துள்ளோம்.",
+          fallback: "நிச்சயம்! எங்கள் சேவைகள் data tracking, ads, speed optimization, மற்றும் custom flows.")
+        },
+        bn: {
+          greeting: "হ্যালো! আমি ভাল আছি। আপনার B2B ব্যবসা স্কেলিং টার্গেট কী?",
+          ads: "Paid Ads আমাদের মেইন স্ট্রেংথ। আমরা Meta Ads, Google Ads, LinkedIn Ads ব্যবহার করি।",
+          ai: "AI automation ২৪/৭ ওয়ার্কফ্লো স্কেল করে, পেরোল বাড়ায় না।",
+          web: "ওয়েবসাইট অভিজ্ঞতা শেষ কনভার্সন পয়েন্ট। আমরা Next.js, React, TailwindCSS-এ দক্ষ।",
+          call: "অবশ্যই! 15‑minute ফ্রি অডিট কলের জন্য ফর্ম বা WhatsApp ব্যবহার করুন।",
+          case: "NeoBank, swiftRide ইত্যাদির জন্য ক্যাম্পেইন তৈরি করেছি।",
+          fallback: "নিশ্চয়! আমাদের সেবা ডেটা ট্র্যাকিং, Ads, Speed Optimization ইত্যাদি।"
+        },
+        te: {
+          greeting: "నమస్కారం! నేను బాగున్నాను. మీ B2B బిజినెస్ స్కేలింగ్ లక్ష్యాలు ఏమిటి?",
+          ads: "Paid Ads మా ప్రధాన బలం. మేము Meta Ads, Google Ads, LinkedIn Ads వాడుతాం.",
+          ai: "AI automation 24/7 వర్కఫ్లోలను స్కేలు చేస్తుంది, పేరోల్ పెంచదు.",
+          web: "వెబ్‌సైట్ అనుభవం చివరి కన్వర్ట్ పాయింట్. మాకు Next.js, React, TailwindCSS తెలుసు.",
+          call: "ఖచ్చితంగా! 15‑minute ఫ్రీ ఆడిట్ కాల్ కోసం ఫారం లేదా WhatsApp బటన్ వాడండి.",
+          case: "NeoBank, swiftRide వంటి సంస్థల కోసం క్యాంపెయిన్ సెట్ చేసాము.",
+          fallback: "అవును! మా సేవలు data tracking, ads, speed optimization, custom flows.")
+        },
+        gu: {
+          greeting: "નમસ્તે! હું બરાબર છું. તમારા B2B બિઝનેસ સ્કેલિંગ ટાર્ગેટ શું છે?",
+          ads: "Paid Ads અમારી મુખ્ય શક્તિ છે. અમે Meta Ads, Google Ads, LinkedIn Ads ઉપયોગ કરીએ છીએ.",
+          ai: "AI automation 24/7 workflow ને સ્કેલ કરે છે, payroll વધારતું નથી.",
+          web: "વેબસાઇટ અનુભવ અંતિમ conversion point છે. અમે Next.js, React, TailwindCSS માં નિષ્ણાત છીએ.",
+          call: "ખરેખર! 15‑minute મફત audit call માટે ફોર્મ અથવા WhatsApp બટન વાપરો.",
+          case: "NeoBank, swiftRide જેવા ક્લાયન્ટ્સ માટે campaign સેટ કર્યો છે.",
+          fallback: "નિશ્ચિત! અમારી સેવાઓ data tracking, ads, speed optimization, custom flows છે."
         }
       };
+      // Return translated message based on detected language and category key
+      const getMsg = (category) => {
+        const langObj = translations[detectedLang] || translations["en"];
+        return (langObj && langObj[category]) || translations["en"][category];
+      };
+      // Determine category based on keywords (same as original logic)
+      // Greeting
+      if (/\b(hi|hello|hey|hola|greetings|pranam|namaste|kya haal hai|kya chal raha hai)\b/.test(text) || /\b(नमस्ते|हैलो)\b/.test(text)) {
+        return getMsg("greeting");
+      }
+      // Ads and Marketing
+      if (text.includes("ad") || text.includes("roas") || text.includes("marketing") || text.includes("facebook") || text.includes("instagram") || text.includes("meta") || text.includes("google")) {
+        return getMsg("ads");
+      }
+      // AI & Automations
+      if (text.includes("ai") || text.includes("automation") || text.includes("bot") || text.includes("chat") || text.includes("flow") || text.includes("crm")) {
+        return getMsg("ai");
+      }
+      // Web experience / dev
+      if (text.includes("web") || text.includes("tech") || text.includes("shopify") || text.includes("development") || text.includes("design") || text.includes("site") || text.includes("code") || text.includes("coding")) {
+        return getMsg("web");
+      }
+      // Booking a strategy call
+      if (text.includes("book") || text.includes("call") || text.includes("strategy") || text.includes("schedule") || text.includes("contact") || text.includes("milna") || text.includes("appointment")) {
+        return getMsg("call");
+      }
+      // Case studies/Portfolio
+      if (text.includes("case") || text.includes("study") || text.includes("portfolio") || text.includes("result") || text.includes("success") || text.includes("client") || text.includes("work")) {
+        return getMsg("case");
+      }
+      // Default fallback
+      return getMsg("fallback");
+    };
 
-      const response = await fetch(url, {
+
+
+  const callLiveGemini = async (apiKey, userText) => {
+    try {
+      const response = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + apiKey, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(requestBody)
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ contents: [{ parts: [{ text: userText }] }] })
       });
 
       if (!response.ok) {
